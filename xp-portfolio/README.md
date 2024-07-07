@@ -35,11 +35,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Kristian stuff
+## Kristian's notes
 
 Components are stored outside of the app folder. I want to use app for routing purposes only.
 
 ## TODO:
 
-Update linter to correct indentation 
-Test XpWindow component on page.tsx
+- implement nav bar, add to the layout.tsx file.
+- implement content grid, add XpCards as items
+- create styles for window left, window right. 
+- create bear footer
+- create about page
+- create contact page
+- create expandedXpWindow component
+
+

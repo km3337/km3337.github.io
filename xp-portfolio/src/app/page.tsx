@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { XpCard } from "../../components/XpCard";
-import { TypingHeader } from "../../components/TypingHeader/TypingHeader";
+import { XpCard } from "./components/XpCard";
+import { TypingHeader } from "./components/TypingHeader/TypingHeader";
 import styles from "./page.module.css";
 
 export default function Home() {
