@@ -7,19 +7,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          I'm about to go so crazy&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By Kris
-          </a>
-        </div>
       </div>
 
       <div className={styles.center}>
@@ -38,26 +25,18 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Test Area <span>-&gt;</span>
-          </h2>
-          <p>I'm cooking here.</p>
-        </a>
+        <h2>
+          PROJECTS
+        </h2>
 
-        <div className={styles.card}>
-          <XpCard title="Test XpWindow">
+        <div className={styles.cardsContainer}>
+          <XpCard title="DOOMSDAY Capsule" dimensionX={540}>
             <Image
               className={styles.logo}
-              src="/next.svg"
-              alt="Next.js Logo"
-              width={180}
-              height={37}
+              src="/DOOMSDAY still.png"
+              alt="Doomsday Nullified"
+              width={525}
+              height={525}
               priority
             />
           </XpCard>
