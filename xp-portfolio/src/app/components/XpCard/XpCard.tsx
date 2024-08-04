@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import "xp.css/dist/XP.css";
+import styles from './XpCard.module.css'
 
 export interface XpCardProps {
     title: string,
@@ -9,11 +10,10 @@ export interface XpCardProps {
     children?: any;
     dimensionX: number;
 }
-// TODO: add custom dimensions as props
-
+// TODO: add framer motion hover. add redirect on help button click. add logic to hide card on close click.
 export const XpCard = ({ title, children, description, date, dimensionX }: XpCardProps) => {
     return (
-        <>
+        <div className={styles.XpCardWrapper}>
             <div className="window" style={{ width: dimensionX }}>
                 <div className="title-bar">
                     <div className="title-bar-text">{title}</div>
@@ -30,6 +30,6 @@ export const XpCard = ({ title, children, description, date, dimensionX }: XpCar
                     <p className="status-bar-field">{date}</p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
