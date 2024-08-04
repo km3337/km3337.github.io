@@ -4,12 +4,14 @@ import "xp.css/dist/XP.css";
 
 export interface XpCardProps {
     title: string,
+    description: string,
+    date: string,
     children?: any;
     dimensionX: number;
 }
 // TODO: add custom dimensions as props
 
-export const XpCard = ({ title, children, dimensionX }: XpCardProps) => {
+export const XpCard = ({ title, children, description, date, dimensionX }: XpCardProps) => {
     return (
         <>
             <div className="window" style={{ width: dimensionX }}>
@@ -22,6 +24,10 @@ export const XpCard = ({ title, children, dimensionX }: XpCardProps) => {
                 </div>
                 <div className="window-body">
                     {children}
+                </div>
+                <div className="status-bar">
+                    <p className="status-bar-field">{description}</p>
+                    <p className="status-bar-field">{date}</p>
                 </div>
             </div>
         </>

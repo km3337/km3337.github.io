@@ -40,13 +40,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Components are stored outside of the app folder. I want to use app for routing purposes only.
 
 ## TODO:
-
+- add hover function to XpCard from framer motion.
+- seperate header into left and right sections.
+- create Project section container + grid.
+- change minicon for webapp.
 - implement nav bar, add to the layout.tsx file.
-- implement content grid, add XpCards as items
-- create styles for window left, window right. 
 - create bear footer
-- create about page
-- create contact page
+- create about page & route
+- create contact page & route
+- create ProjectPage template
 - create expandedXpWindow component
 
 

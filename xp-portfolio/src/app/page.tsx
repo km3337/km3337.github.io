@@ -30,7 +30,7 @@ export default function Home() {
         </h2>
 
         <div className={styles.cardsContainer}>
-          <XpCard title="DOOMSDAY Capsule" dimensionX={540}>
+          <XpCard title="DOOMSDAY Capsule" description="A tribute to the illest villain" date="Oct 2021" dimensionX={540}>
             <Image
               className={styles.logo}
               src="/DOOMSDAY still.png"
