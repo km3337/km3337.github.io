@@ -13,7 +13,7 @@ export interface XpCardProps {
 // TODO: add framer motion hover. add redirect on help button click. add logic to hide card on close click.
 export const XpCard = ({ title, children, description, date, dimensionX }: XpCardProps) => {
     return (
-        <div className={styles.XpCardWrapper}>
+        <div className={styles.XpCardWrapper} style={{ width: dimensionX }}>
             <div className="window" style={{ width: dimensionX }}>
                 <div className="title-bar">
                     <div className="title-bar-text">{title}</div>
@@ -30,6 +30,6 @@ export const XpCard = ({ title, children, description, date, dimensionX }: XpCar
                     <p className="status-bar-field">{date}</p>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
