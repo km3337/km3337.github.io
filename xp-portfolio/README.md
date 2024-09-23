@@ -41,6 +41,9 @@ Components are stored outside of the app folder. I want to use app for routing p
 
 ## TODO:
 - add hover function to XpCard from framer motion.
+- create "ParallaxText" Headers to use to decorate sections
+- Add ImageResize for mobile/tablet
+- create const file for mapping of portfolio cards
 - seperate header into left and right sections.
 - create Project section container + grid.
 - change minicon for webapp.

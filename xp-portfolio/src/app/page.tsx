@@ -25,23 +25,44 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <h2>
-          PROJECTS
-        </h2>
+        <section>
+          <h2>
+            PROJECTS
+          </h2>
 
-        <div className={styles.cardsContainer}>
-          <XpCard title="DOOMSDAY Capsule" description="A tribute to the illest villain" date="Oct 2021" dimensionX={540}>
-            <Image
-              className={styles.logo}
-              src="/DOOMSDAY still.png"
-              alt="Doomsday Nullified"
-              width={525}
-              height={525}
-              priority
-            />
-          </XpCard>
-        </div>
-
+          <div id={styles.cardsContainer}>
+            <XpCard title="DOOMSDAY Capsule" description="A tribute to the illest villain" date="Oct 2021" dimensionX={540}>
+              <Image
+                className={styles.logo}
+                src="/DOOMSDAY still.png"
+                alt="Doomsday Nullified"
+                width={525}
+                height={525}
+                priority
+              />
+            </XpCard>
+            <XpCard title="DOOMSDAY Capsule" description="A tribute to the illest villain" date="Oct 2021" dimensionX={540}>
+              <Image
+                className={styles.logo}
+                src="/DOOMSDAY still.png"
+                alt="Doomsday Nullified"
+                width={525}
+                height={525}
+                priority
+              />
+            </XpCard>
+            <XpCard title="DOOMSDAY Capsule" description="A tribute to the illest villain" date="Oct 2021" dimensionX={540}>
+              <Image
+                className={styles.logo}
+                src="/DOOMSDAY still.png"
+                alt="Doomsday Nullified"
+                width={525}
+                height={525}
+                priority
+              />
+            </XpCard>
+          </div>
+        </section>
       </div>
     </main >
   );

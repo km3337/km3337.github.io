@@ -2,7 +2,7 @@
 import React from 'react';
 import "xp.css/dist/XP.css";
 import styles from './XpCard.module.css'
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 
 
 export interface XpCardProps {
@@ -12,14 +12,33 @@ export interface XpCardProps {
     children?: any;
     dimensionX: number;
 }
-// TODO: add framer motion hover. add redirect on help button click. add logic to hide card on close click.
+
+const cardVariants: Variants = {
+    offscreen: {
+        y: 300
+    },
+    onscreen: {
+        y: 50,
+        rotate: -10,
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 0.8
+        }
+    }
+};
+
+// TODO: add redirect on help button click. add logic to hide card on close click.
 export const XpCard = ({ title, children, description, date, dimensionX }: XpCardProps) => {
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: 'spring', duration: 0.25, stiffness: 400, damping: 17 }}
+            whileHover={{ scale: 1.10 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.85 }}
+            variants={cardVariants}
         >
             <div className={styles.XpCardWrapper} style={{ width: dimensionX }}>
                 <div className="window" style={{ width: dimensionX }}>
