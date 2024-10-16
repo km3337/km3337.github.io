@@ -40,7 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Components are stored outside of the app folder. I want to use app for routing purposes only.
 
 ## TODO:
-- add hover function to XpCard from framer motion.
+- add hover function to XpCard from framer motion. :done:
 - create "ParallaxText" Headers to use to decorate sections
 - Add ImageResize for mobile/tablet
 - create const file for mapping of portfolio cards

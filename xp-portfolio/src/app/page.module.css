@@ -21,7 +21,7 @@
 #cardsContainer {
   display: flex;
   flex-direction: column;
-  column-gap: 50px;
+  gap: 50px;
 }
 
 .description a {
