@@ -1,0 +1,21 @@
+.root {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    padding: 10px;
+    background-color: #245DDA;
+    border-radius: 12px;
+    box-shadow:
+        inset 0px -6px 6px -6px #4f82f1, // top border shadow
+        2px 6px 18px #888888, // outer border shadow
+        -2px -6px 18px #888888; // outer border shadow
+}
+
+.navItem {
+    position: relative;
+    z-index: 10;
+    color: #0024f1f1;
+    mix-blend-mode: difference;
+}

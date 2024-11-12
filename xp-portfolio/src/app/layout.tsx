@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { NavigationBar } from "./ui/NavigationBar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kristian Mentor Portfolio app",
+  title: " NULL INSIDE - Kristian Mentor's Portfolio app",
   description: "A creative compilation of my work. ",
 };
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="headerSection">
+          <NavigationBar />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

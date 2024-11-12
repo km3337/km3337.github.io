@@ -207,11 +207,10 @@ export default function Home() {
                 className={styles.logo}
                 src="/HOPE YOU GET RICH.png"
                 alt="Nullified"
-              // width={300}
-              // height={270}
+                width={300}
+                height={270}
               />
             </XpCard>
-
           </div>
         </section>
       </div>

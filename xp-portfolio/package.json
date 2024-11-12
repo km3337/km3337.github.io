@@ -18,6 +18,7 @@
     "react-dom": "^18",
     "react-lorem-ipsum": "^1.4.10",
     "react-typed": "^2.0.12",
+    "sass": "^1.80.6",
     "xp.css": "^0.2.6"
   },
   "devDependencies": {

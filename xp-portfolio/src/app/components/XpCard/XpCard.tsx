@@ -5,8 +5,6 @@ import styles from './XpCard.module.css'
 import { motion, Variants } from "framer-motion"
 import html2canvas from 'html2canvas';
 
-
-
 export interface XpCardProps {
     title: string,
     description: string,

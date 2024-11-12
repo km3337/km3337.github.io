@@ -38,7 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Kristian's notes
 
 Components are stored outside of the app folder. I want to use app for routing purposes only.
-
+TODO: Make a seperate layout styles module, apply positioning styles there.
 ## TODO:
 - add hover function to XpCard from framer motion. :done:
 - create "ParallaxText" Headers to use to decorate sections
