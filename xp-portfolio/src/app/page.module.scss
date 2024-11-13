@@ -7,17 +7,6 @@
   min-height: 100vh;
 }
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
 #cardsContainer {
   display: flex;
   flex-direction: column;
@@ -62,10 +51,6 @@
   width: 33%;
   float: left;
   padding: 4rem 0;
-}
-
-.logo {
-  position: relative;
 }
 
 /* Enable hover only on non-touch devices */
@@ -158,15 +143,6 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
 
 @keyframes rotate {
   from {
