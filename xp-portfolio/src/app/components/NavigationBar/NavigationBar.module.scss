@@ -4,15 +4,18 @@
 
     align-items: center;
     justify-content: space-between;
-    width: 93%;
+    width: 94%;
     margin: auto;
     padding: 18px;
-    background-color: #245DDA;
+    background-color: #0e53f3e3;
+    backdrop-filter: blur(12px);
     border-radius: 12px;
+
+    border-bottom: solid 3px #6686cfe3;
     box-shadow:
-        inset 0px -6px 6px -6px #4f82f1, // top border shadow
-        2px 6px 18px #888888, // outer border shadow
-        -2px -6px 18px #888888; // outer border shadow
+
+        2px 6px 14px #888888, // outer border shadow
+        -2px -6px 14px #888888; // outer border shadow
 
     @media screen and (max-width: 600px) {
         width: 86%;
@@ -21,8 +24,9 @@
 }
 
 .navItem {
+    list-style: none;
     position: relative;
     z-index: 10;
-    color: #0024f1f1;
-    mix-blend-mode: difference;
+    color: white;
+
 }
