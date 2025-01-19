@@ -4,17 +4,18 @@ import styles from './CardsContainer.module.scss'
 
 export const LeftRightGrid = () => {
     return (
-        // replace with map function.
+        // replace with map function, replace XpCard props with content prop. 
         <div id={styles.cardsContainer}>
-            <XpCard title="S.A.D.E." description="Unreleased graphic :D" date="March 2024" dimensionX={415}>
-                <img
-                    className={styles.logo}
-                    src="/sade.png"
-                    alt="Nullified"
-                    width={400}
-                    height={425}
-                />
-            </XpCard>
+            <XpCard title="S.A.D.E." description="Unreleased graphic :D" date="March 2024" dimensionX={415}
+                content={
+                    <img
+                        className={styles.logo}
+                        src="/sade.png"
+                        alt="Nullified"
+                        width={400}
+                        height={425}
+                    />}
+            />
             <XpCard title="SELF PORTRAIT" description="my first self portrait" date="April 2020" dimensionX={315}>
                 <img
                     className={styles.logo}
