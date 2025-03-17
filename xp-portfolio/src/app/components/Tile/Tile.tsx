@@ -5,7 +5,7 @@ const Tile = () => {
         <motion.div
             whileHover={{
                 zIndex: 1,
-                backgroundColor: "#7c3aed",
+                backgroundColor: "#00573D",
             }}
             transition={{
                 duration: 5,
