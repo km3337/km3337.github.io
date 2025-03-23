@@ -1,6 +1,9 @@
 import { motion } from "framer-motion"
+// import { useState } from 'react'
 
-const Tile = () => {
+export const Tile = () => {
+    // [isActive, setIsActive] = useState<boolean>(false);
+
     return (
         <motion.div
             whileHover={{
@@ -8,8 +11,8 @@ const Tile = () => {
                 backgroundColor: "#00573D",
             }}
             transition={{
-                duration: 5,
-                ease: "easeOut",
+                duration: 10,
+                ease: ["easeIn", "easeOut"],
             }}
             className="aspect-square bg-neutral-950 border-neutral-900"
         />
