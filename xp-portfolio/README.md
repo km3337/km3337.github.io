@@ -19,7 +19,7 @@ TODO: Make a seperate layout styles module, apply positioning styles there.
 I'm experimenting with using tailwind
 
 ## TODO:
-- add stateManagement/complicated hover state to Tile component.
+- add complicated hover state to Tile component.
 - add logic to modify grid size on mobile.
 - create "ParallaxText" Headers to use to decorate sections
 - Make homepage mobile friendly

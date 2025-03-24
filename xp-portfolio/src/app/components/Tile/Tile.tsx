@@ -8,13 +8,13 @@ export const Tile = () => {
         <motion.div
             whileHover={{
                 zIndex: 1,
-                backgroundColor: "#00573D",
+                backgroundColor: ["#00573D", "#004530", "#003424", "002218"],
             }}
             transition={{
-                duration: 10,
-                ease: ["easeIn", "easeOut"],
+                duration: 2,
+                ease: "easeIn",
             }}
-            className="aspect-square bg-neutral-950 border-neutral-900"
+            className="aspect-square bg-neutral-950 border-solid border-neutral-900"
         />
     )
 }

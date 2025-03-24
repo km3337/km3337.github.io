@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="headerSection">
+        <nav className="~pb-6/10 pointer-events-none fixed bottom-0 left-0 z-10 w-full pt-12">
           <NavigationBar />
-        </div>
+        </nav>
         {children}
       </body>
     </html>

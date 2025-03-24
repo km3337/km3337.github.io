@@ -2,7 +2,7 @@
 import React from 'react';
 import "xp.css/dist/XP.css";
 import styles from './XpCard.module.css'
-import { motion, Variants } from "framer-motion"
+import { motion, Variants } from "motion/react"
 import html2canvas from 'html2canvas';
 
 export interface XpCardProps {

@@ -3,6 +3,7 @@ import { PORTFOLIO_CARDS } from "./components/XpCard";
 import { HorizontalScrollCarousel } from "./components/HorizontalScrollCarousel";
 import { useCheckIsMobile } from "./hooks/useMobileSize";
 import { HeroGrid } from "./components/HeroGrid";
+import { motion } from 'motion/react'
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -16,6 +17,9 @@ export default function Home() {
           GALLERY
         </h2>
         {/* move into gallery section component */}
+        <motion.p>
+          coming soon
+        </motion.p>
         {isMobile ? <HorizontalScrollCarousel cards={PORTFOLIO_CARDS} /> : <h3> desktop view</h3>}
       </div>
     </main >
