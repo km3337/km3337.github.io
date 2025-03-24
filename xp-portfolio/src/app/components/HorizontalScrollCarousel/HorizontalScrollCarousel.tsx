@@ -1,5 +1,5 @@
 'use client'
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll } from "motion/react";
 import React, { useRef } from "react";
 import { XpCard, XpCardProps } from '../XpCard'
 
