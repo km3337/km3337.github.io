@@ -19,10 +19,8 @@ TODO: Make a seperate layout styles module, apply positioning styles there.
 I'm experimenting with using tailwind
 
 ## TODO:
-- add complicated hover state to Tile component.
-- add logic to modify grid size on mobile.
+- add selectable tabs to Navigation bar
 - create "ParallaxText" Headers to use to decorate sections
-- Make homepage mobile friendly
 - create const file for mapping of portfolio cards
 - create Project section container + grid.
 - change minicon for webapp.

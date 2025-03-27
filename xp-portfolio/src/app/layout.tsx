@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Head from 'next/head';
 import { NavigationBar } from "./components/NavigationBar";
 import "./globals.css";
 
@@ -17,10 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <body className={inter.className}>
-        <nav className="~pb-6/10 pointer-events-none fixed bottom-0 left-0 z-10 w-full pt-12">
-          <NavigationBar />
-        </nav>
+        <NavigationBar />
         {children}
       </body>
     </html>
