@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { Tile } from '../Tile'
+import DownArrowCubed from '../Icons/ArrowDownIcon.svg'
 
 export const HeroGrid = () => {
     return (
@@ -16,6 +17,16 @@ export const HeroGrid = () => {
                     width={250}
                     src="/NULL_Inside white.png"
                 />
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{
+                        repeat: Infinity,
+                        duration: 2,
+                        ease: "easeIn",
+                    }}
+                >
+                    <DownArrowCubed width="45" height="45" fill='white' />
+                </motion.div>
             </div>
 
         </>

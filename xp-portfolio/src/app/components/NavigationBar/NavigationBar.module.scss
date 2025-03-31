@@ -1,36 +1,7 @@
-.root {
-    // position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    max-width: 500px;
-    gap: 20%;
-    margin: auto;
-    margin-bottom: 10px;
-    padding: 18px;
-    background-color: #0e53f3e3;
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    z-index: 9;
-
-    border-bottom: solid 2px #6686cfe3;
-    box-shadow:
-
-        2px 6px 14px #888888, // outer border shadow
-        -2px -6px 14px #888888; // outer border shadow
-
-    @media screen and (max-width: 600px) {
-        width: 86%;
-
-    }
-}
-
-
 .navItem {
-    list-style: none;
-    position: relative;
-    z-index: 10;
+    // list-style: none;
+    // position: relative;
+    // z-index: 10;
     color: white;
 
 }
