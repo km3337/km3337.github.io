@@ -14,13 +14,12 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["40%", "-95%"]);
     // replace cards with map from 
     return (
-        <section ref={targetRef} className="todo">
-            <div className="todo-sticky">
-
-                <motion.div style={{ x }} className="todo-flex">
+        <section ref={targetRef}>
+            <div>
+                <motion.div>
                     {cards.map((card) => {
                         return <XpCard
                             title={card.title}

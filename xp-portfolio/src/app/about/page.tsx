@@ -45,6 +45,8 @@ export default function Page() {
                     <p>Vans</p>
                     <p>Eventbrite</p>
                     <p>GIPHY Inc</p>
+                    <p> DSGNRS Workshop</p>
+                    <p> CUNY </p>
                 </div>
                 <div>
                 </div>
