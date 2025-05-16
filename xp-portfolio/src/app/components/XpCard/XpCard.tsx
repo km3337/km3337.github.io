@@ -9,7 +9,7 @@ export interface XpCardProps {
     title: string,
     description: string,
     date: string,
-    content: React.ReactElement;
+    imgSrc: string;
     dimensionX: number;
 }
 
@@ -32,7 +32,7 @@ const cardVariants: Variants = {
 
 // TODO: add redirect on help button click. add logic to hide card on close click.
 // each XpCard should have a unique ID or TITLE
-export const XpCard = ({ title, content, description, date, dimensionX }: XpCardProps) => {
+export const XpCard = ({ title, imgSrc, description, date, dimensionX }: XpCardProps) => {
 
     const handleDownloadImage = async () => {
         const element = document.getElementById(`capture-${title}`)
@@ -51,7 +51,7 @@ export const XpCard = ({ title, content, description, date, dimensionX }: XpCard
         }
     };
     return (
-        <div id={title} style={{ width: dimensionX }}>
+        <div id={title} style={{ width: 700 }}>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ scale: 1 }}
@@ -71,7 +71,7 @@ export const XpCard = ({ title, content, description, date, dimensionX }: XpCard
                             </div>
                         </div>
                         <div className="window-body">
-                            {content}
+                            <img src={imgSrc} alt={title} className="object-cover w-full h-full" />
                         </div>
                         <div className="status-bar">
                             <p className="status-bar-field">{description}</p>

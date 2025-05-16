@@ -11,14 +11,7 @@ const AboutImage = () => {
                 description='A tribute to the illest villain'
                 date='Oct 2021'
                 dimensionX={540}
-                content={
-                    <img
-                        src="/DOOMSDAY still.png"
-                        alt="Doomsday Nullified"
-                        width={525}
-                        height={525}
-                    />
-                }
+                imgSrc="/DOOMSDAY still.png"
             />
         </div>
     )

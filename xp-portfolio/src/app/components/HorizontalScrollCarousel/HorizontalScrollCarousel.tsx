@@ -23,7 +23,7 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
                     {cards.map((card) => {
                         return <XpCard
                             title={card.title}
-                            content={card.content}
+                            imgSrc={card.imgSrc}
                             description={card.description}
                             date={card.date}
                             dimensionX={card.dimensionX}
