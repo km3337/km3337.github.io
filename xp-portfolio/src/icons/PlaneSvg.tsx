@@ -1,13 +1,13 @@
 const PlaneSvg = () => {
     return (
         <svg
-            fill="#000000"
+            fill="#FFFFFF"
             version="1.1"
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="800px"
-            height="800px"
+            width="24px"
+            height="24px"
             viewBox="0 0 512 512"
             enableBackground="new 0 0 512 512"
             xmlSpace="preserve"

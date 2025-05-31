@@ -16,6 +16,7 @@ export const HeroGrid = () => {
                     animate={{ opacity: 1, y: 0 }}
                     width={250}
                     src="/NULL_Inside white.png"
+                    alt="NULL Inside"
                 />
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
@@ -25,10 +26,9 @@ export const HeroGrid = () => {
                         ease: "easeIn",
                     }}
                 >
-                    <DownArrowCubed width="45" height="45" fill='white' />
+                    <DownArrowCubed width={45} height={45} fill="white" />
                 </motion.div>
             </div>
-
         </>
     )
 }
