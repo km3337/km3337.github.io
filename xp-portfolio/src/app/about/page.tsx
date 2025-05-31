@@ -22,7 +22,7 @@ export default function Page() {
         <>
             <div className={styles.root}>
                 <div className={styles.header}>
-                    < h2 > Hey, I'm Kris!</h2 >
+                    <h2> Hey, I&#39;m Kris!</h2>
                     < br />
                     <TypingHeader />
                 </div >
