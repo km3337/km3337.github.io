@@ -9,20 +9,31 @@ import styles from "./page.module.scss";
 export default function Home() {
   return (
     <main className="w-full flex flex-col">
-      <HeroGrid />
-      <h2 className={styles.pixel}>
-        GALLERY
-      </h2>
-      <HorizontalScrollCarousel cards={PORTFOLIO_CARDS} />
+      {/* Hero Section */}
+      <section className="relative h-screen">
+        <HeroGrid />
+      </section>
 
-      <div className={styles.mobileContainer}>
+      {/* Gallery Section */}
+      <section className="min-h-screen py-20 px-4 md:px-8">
+        <h2 className={`${styles.pixel} text-4xl md:text-5xl mb-12 text-center`}>
+          GALLERY
+        </h2>
+        <div className="mt-8 mb-16">
+          <HorizontalScrollCarousel cards={PORTFOLIO_CARDS} />
+        </div>
 
-        {/* move into gallery section component */}
-        <motion.p>
-          coming soon
-        </motion.p>
-
-      </div>
-    </main >
+        <div className={`${styles.mobileContainer} mt-16`}>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-center text-white/70"
+          >
+            More coming soon...
+          </motion.p>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -2,84 +2,75 @@
 import React from 'react';
 import "xp.css/dist/XP.css";
 import styles from './XpCard.module.css'
-import { motion, Variants } from "motion/react"
-import html2canvas from 'html2canvas';
+import { motion } from "motion/react"
 
 export interface XpCardProps {
-    title: string,
-    description: string,
-    date: string,
+    title: string;
+    description: string;
+    date: string;
     imgSrc: string;
-    dimensionX: number;
+    dimensionX?: number; // Made optional since we'll use responsive widths
 }
 
-const cardVariants: Variants = {
-    offscreen: {
-        y: 300
-    },
-    onscreen: {
-        y: 50,
-        rotate: -10,
+const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+        opacity: 1,
+        y: 0,
         transition: {
             type: "spring",
-            bounce: 0.4,
-            duration: 0.8
+            duration: 0.6,
+            bounce: 0.3
         }
     }
 };
 
-
-
 // TODO: add redirect on help button click. add logic to hide card on close click.
 // each XpCard should have a unique ID or TITLE
-export const XpCard = ({ title, imgSrc, description, date, dimensionX }: XpCardProps) => {
+export const XpCard = ({ title, imgSrc, description, date }: XpCardProps) => {
 
-    const handleDownloadImage = async () => {
-        const element = document.getElementById(`capture-${title}`)
-
-        if (element) {
-            const canvas = await html2canvas(element),
-                data = canvas.toDataURL('image/png'),
-                link = document.createElement('a');
-
-            link.href = data;
-            link.download = `capture-${title}-image.jpg`;
-
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    };
     return (
-        <div id={title} style={{ width: 700 }}>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: 'spring', duration: 0.25, stiffness: 400, damping: 17 }}
-                whileHover={{ scale: 1.10 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.85 }}
-                variants={cardVariants}
-            >
-                <div className={styles.XpCardWrapper} style={{ width: dimensionX }}>
-                    <div className="window" style={{ width: dimensionX }}>
-                        <div className="title-bar">
-                            <div className="title-bar-text">{title}</div>
-                            <div className="title-bar-controls">
-                                <button aria-label="Maximize" onClick={async () => { handleDownloadImage() }}></button>
-                                <button aria-label="Close"></button>
-                            </div>
-                        </div>
-                        <div className="window-body">
-                            <img src={imgSrc} alt={title} className="object-cover w-full h-full" />
-                        </div>
-                        <div className="status-bar">
-                            <p className="status-bar-field">{description}</p>
-                            <p className="status-bar-field">{date}</p>
+        <motion.div
+            id={`capture-${title}`}
+            className={styles.cardContainer}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+        >
+            <div className={styles.cardWrapper}>
+                <div className={`window ${styles.windowCustom}`}>
+                    <div className={`title-bar ${styles.titleBarCustom}`}>
+                        <div className="title-bar-text truncate max-w-[80%]">{title}</div>
+                        <div className="title-bar-controls">
+                            <button
+                                aria-label="Close"
+                                className={styles.closeButton}
+                            />
                         </div>
                     </div>
-                </div >
-            </motion.div>
-        </div>
-    )
-}
+                    <motion.div
+                        className="window-body p-0 relative overflow-hidden"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    >
+                        <motion.img
+                            src={imgSrc}
+                            alt={title}
+                            className={styles.cardImage}
+                            loading="lazy"
+                            initial={{ scale: 1.0 }}
+                            whileHover={{ scale: 1.15 }}
+                            transition={{ duration: 0.4 }}
+                        />
+                    </motion.div>
+                    <div className={`status-bar ${styles.statusBarCustom}`}>
+                        <p className="status-bar-field truncate">{description}</p>
+                        <p className="status-bar-field whitespace-nowrap">{date}</p>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
+};

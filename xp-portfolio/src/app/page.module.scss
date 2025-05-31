@@ -1,8 +1,36 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding: 6rem;
   min-height: 100vh;
+}
+
+.pixel {
+  font-family: 'Press Start 2P', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mobileContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .pixel {
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .pixel {
+    font-size: 2rem;
+  }
 }
