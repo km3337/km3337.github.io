@@ -14,16 +14,8 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
         container: containerRef,
     });
 
-    // Transform for progress indicator
-    const scaleX = useTransform(scrollXProgress, [0, 1], [0, 1]);
-
     return (
         <div className="relative w-full">
-            {/* Progress bar */}
-            {/* <motion.div
-                className="fixed top-0 left-0 right-0 h-1 bg-blue-600 origin-left z-50"
-                style={{ scaleX }}
-            /> */}
 
             {/* Cards container */}
             <div

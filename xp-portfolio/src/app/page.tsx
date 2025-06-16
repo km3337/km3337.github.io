@@ -1,7 +1,6 @@
 'use client'
 import { PORTFOLIO_CARDS } from "./components/XpCard";
 import { HorizontalScrollCarousel } from "./components/HorizontalScrollCarousel";
-import { useCheckIsMobile } from "./hooks/useMobileSize";
 import { HeroGrid } from "./components/HeroGrid";
 import { motion } from 'motion/react'
 import styles from "./page.module.scss";
@@ -20,6 +19,7 @@ export default function Home() {
           GALLERY
         </h2>
         <div className="mt-8 mb-16">
+          <h3>  Illustrations</h3>
           <HorizontalScrollCarousel cards={PORTFOLIO_CARDS} />
         </div>
 
