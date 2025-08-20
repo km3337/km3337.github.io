@@ -2,9 +2,46 @@
 import { PORTFOLIO_CARDS } from "./components/XpCard";
 import { HorizontalScrollCarousel } from "./components/HorizontalScrollCarousel";
 import { HeroGrid } from "./components/HeroGrid";
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import styles from "./page.module.scss";
 
+
+const CreativeDirectionCarousel = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className={`${styles.subHeading} text-md md:text-lg mb-12 text-center`}> Creative Direction </h3>
+      <HorizontalScrollCarousel cards={[]} />
+    </div>
+  )
+}
+
+const IllustrationCarousel = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className={`${styles.subHeading} text-md md:text-lg mb-12 text-center`}> Illustration </h3>
+      <HorizontalScrollCarousel cards={[]} />
+    </div>
+  )
+}
+
+
+const AnimationCarousel = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className={`${styles.subHeading} text-md md:text-lg mb-12 text-center`}> Animation </h3>
+      <HorizontalScrollCarousel cards={[]} />
+    </div>
+  )
+}
+
+const MerchandiseCarousel = () => {
+  return (
+    <div className="flex flex-col gap-2">
+      <h3 className={`${styles.subHeading} text-md md:text-lg mb-12 text-center`}> Merchandise </h3>
+      <HorizontalScrollCarousel cards={[]} />
+    </div>
+  )
+}
 export default function Home() {
   return (
     <main className="w-full flex flex-col">
@@ -15,24 +52,17 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section className="min-h-screen py-20 px-4 md:px-8">
-        <h2 className={`${styles.pixel} text-4xl md:text-5xl mb-12 text-center`}>
+        <h2 className={`${styles.heading} text-8xl md:text-9xl mb-12 text-center`}>
           GALLERY
         </h2>
-        <div className="mt-8 mb-16">
-          <h3>  Illustrations</h3>
-          <HorizontalScrollCarousel cards={PORTFOLIO_CARDS} />
-        </div>
+        <motion.div className=" flex flex-col mt-8 mb-16 gap-16">
 
-        <div className={`${styles.mobileContainer} mt-16`}>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-center text-white/70"
-          >
-            More coming soon...
-          </motion.p>
-        </div>
+          <CreativeDirectionCarousel />
+          <IllustrationCarousel />
+          <MerchandiseCarousel />
+          <AnimationCarousel />
+
+        </motion.div>
       </section>
     </main>
   );
