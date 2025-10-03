@@ -13,7 +13,15 @@ export interface XpCardProps {
 }
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: {
+        opacity: 0,
+        y: 50,
+        transition: {
+            type: "spring",
+            duration: 0.4,
+            bounce: 0.2
+        }
+    },
     visible: {
         opacity: 1,
         y: 0,
@@ -36,7 +44,7 @@ export const XpCard = ({ title, imgSrc, description, date }: XpCardProps) => {
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: false, margin: "-100px" }}
         >
             <div className={styles.cardWrapper}>
                 <div className={`window ${styles.windowCustom}`}>
@@ -66,7 +74,7 @@ export const XpCard = ({ title, imgSrc, description, date }: XpCardProps) => {
                         />
                     </motion.div>
                     <div className={`status-bar ${styles.statusBarCustom}`}>
-                        <p className="status-bar-field truncate">{description}</p>
+                        <p className="status-bar-field truncate text-md">{description}</p>
                         <p className="status-bar-field whitespace-nowrap">{date}</p>
                     </div>
                 </div>
