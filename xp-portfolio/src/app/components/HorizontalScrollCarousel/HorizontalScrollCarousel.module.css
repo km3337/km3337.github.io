@@ -1,11 +1,15 @@
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+.hideVerticalScrollbar {
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-    /* Chrome, Safari and Opera */
+.draggable {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.draggable:active {
+    cursor: grabbing;
 }

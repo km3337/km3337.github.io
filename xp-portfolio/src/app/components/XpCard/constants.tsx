@@ -1,74 +1,168 @@
 import { XpCardProps } from "./XpCard"
 
-export const PORTFOLIO_CARDS: XpCardProps[] = [
+export const CREATIVE_DIRECTION_CARDS: XpCardProps[] = [
     {
-        title: 'IGOR',
-        description: 'A BOY IS A GUN',
-        date: 'Feb 2021',
-        dimensionX: 400,
-        imgSrc: '/IGOR.png'
+        title: "Bliss Zine Showcase",
+        description: "Editorial shoot for Dekopon Magazine",
+        date: "2024",
+        imgSrc: "/direction/Bliss capture.png"
     },
     {
-        title: 'ASCII PORTRAIT',
-        description: 'Text-based art experiment',
-        date: 'Mar 2021',
-        dimensionX: 400,
-        imgSrc: '/ascii-portrait.png'
+        title: "End of an Error Poster",
+        description: "Jet magazine inspired shoot for the End of an Error Campaign",
+        date: "2022",
+        imgSrc: "/direction/EndOfAnError.jpg"
     },
     {
-        title: 'SMH',
-        description: 'Portrait series',
-        date: 'Apr 2021',
-        dimensionX: 400,
-        imgSrc: '/smh.png'
+        title: "NNYC Visual Identity",
+        description: "New York creative collective branding project",
+        date: "2022",
+        imgSrc: "/nnyc.png"
     },
     {
-        title: 'ARIZONA',
-        description: 'Beverage series',
-        date: 'Sept 2020',
-        dimensionX: 400,
-        imgSrc: '/beverages1.png'
-    },
-    {
-        title: 'NULL VAL',
-        description: 'Beverage series',
-        date: 'Sept 2020',
-        dimensionX: 400,
-        imgSrc: '/beverages2.png'
-    },
-    {
-        title: 'LAST STOP',
-        description: 'L Train view',
-        date: 'Oct 2021',
-        dimensionX: 400,
-        imgSrc: '/train still left.png'
-    },
-    {
-        title: 'NULL BEAR',
-        description: 'NULL BEAR series',
-        date: 'May 2023',
-        dimensionX: 400,
-        imgSrc: '/null bear flatbush still.png'
-    },
-    {
-        title: 'IN MY BAG',
-        description: 'Telfar collab',
-        date: 'Jun 2023',
-        dimensionX: 400,
-        imgSrc: '/in-my-bag.png'
-    },
-    {
-        title: 'NULL SPORTS',
-        description: 'Tennis ball character',
-        date: 'Jul 2023',
-        dimensionX: 400,
-        imgSrc: '/null-sports.png'
-    },
-    {
-        title: 'HOPE YOU GET RICH',
-        description: 'For BASK NY',
-        date: 'Apr 2021',
-        dimensionX: 400,
-        imgSrc: '/HOPE YOU GET RICH.png'
+        title: "Machine of the Year",
+        description: "Poster for the Machine of the Year Campaign",
+        date: "2021",
+        imgSrc: "/machine of the year full.png"
     }
 ];
+
+
+export const ILLUSTRATION_CARDS: XpCardProps[] = [
+    {
+        title: "Beverage series",
+        description: "renders of my favorite drinks",
+        date: "2021",
+        imgSrc: "/illustrations/null essential bev.gif"
+    },
+    {
+        title: "Killswitch Portraits",
+        description: "portraits commissioned by the rap group Killswitch",
+        date: "2021",
+        imgSrc: "/illustrations/killswitch portraits.gif"
+    },
+    {
+        title: "Inner City Ranger",
+        description: "Mockup for a non for profit organization",
+        date: "2021",
+        imgSrc: "/illustrations/inner city ranger.png"
+    },
+    {
+        title: "SMH",
+        description: "SMH Single cover for MAVI",
+        date: "2021",
+        imgSrc: "/illustrations/mavi smh HQ.png"
+    },
+    {
+        title: "AirMax Day: AM90s",
+        description: "Submission for extra butter's airmax day.",
+        date: "2020",
+        imgSrc: "/illustrations/airmax day am90s.png"
+    },
+    {
+        title: "Sade Portrait",
+        description: "ASCII portrait of the iconic R&B artist",
+        date: "2024",
+        imgSrc: "/sade.png"
+    },
+    {
+        title: "Eva 01",
+        description: "Pixelated render of EVA 01 from Neon Genesis Evangelion",
+        date: "2021",
+        imgSrc: "/illustrations/Eva 01.png"
+    }
+];
+
+// Sample data for Animation carousel
+export const ANIMATION_CARDS: XpCardProps[] = [
+    {
+        title: "DOOMSDAY Tribute",
+        description: "ALL CAPS Tribute to the illest villain",
+        date: "2021",
+        imgSrc: "/animations/DOOMSDAY sticker.gif"
+    },
+    {
+        title: "Woo Walk",
+        description: "Rotoscoped tribute to Pop Smoke",
+        date: "2021",
+        imgSrc: "/animations/woo walk transparent.gif"
+    },
+    {
+        title: "Rainbow Telfar Loop",
+        description: "GIPHY Sticker for Telfar",
+        date: "2021",
+        imgSrc: "/rainbow telfar.gif"
+    },
+    {
+        title: "Subpeona Williams",
+        description: "Idle animation practice",
+        date: "2022",
+        imgSrc: "/animations/subpeona standing.gif"
+    },
+    {
+        title: "Cockpit",
+        description: "Gundam themed animated poster",
+        date: "2023",
+        imgSrc: "/animations/cockpit.gif"
+    },
+    {
+        title: "Canal Street Market",
+        description: "Animated storefront for Canal Street Market pop up",
+        date: "2022",
+        imgSrc: "/animations/canal street market.gif"
+    },
+    {
+        title: "Hope You Get Rich",
+        description: "animated sticker for BASK NY",
+        date: "2023",
+        imgSrc: "/animations/HOPE YOU GET RICH STICKER .gif"
+    },
+    {
+        title: "POSTED ",
+        description: "visualizer for Donny Durag",
+        date: "2023",
+        imgSrc: "/animations/posted sticker.gif"
+    },
+];
+
+// Sample data for Merchandise carousel
+export const PRODUCT_CARDS: XpCardProps[] = [
+    {
+        title: "Hello World Tee",
+        description: "Programming-inspired streetwear design",
+        date: "2023",
+        imgSrc: "/hello world tee final.png"
+    },
+    {
+        title: "NULL Inside Collection",
+        description: "Minimalist tech-inspired apparel line",
+        date: "2022",
+        imgSrc: "/NULL_Inside white.png"
+    },
+    {
+        title: "Bushwick Bear Design",
+        description: "Brooklyn neighborhood mascot merchandise",
+        date: "2021",
+        imgSrc: "/bushwick bear.png"
+    },
+    {
+        title: "Rainbow Telfar Bag Series",
+        description: "Colorful luxury handbag collaboration concept",
+        date: "2022",
+        imgSrc: "/rainbow telfar blue.png"
+    },
+    {
+        title: "Pilots Finished Apparel",
+        description: "Aviation-themed streetwear collection",
+        date: "2023",
+        imgSrc: "/pilots finished.png"
+    },
+    {
+        title: "Posted Shades Collection",
+        description: "Sunglasses and eyewear design series",
+        date: "2023",
+        imgSrc: "/posted shades preview.png"
+    }
+];
+
+
