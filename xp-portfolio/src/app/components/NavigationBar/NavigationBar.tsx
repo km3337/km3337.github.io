@@ -22,11 +22,10 @@ export const NavigationBar = () => {
     ];
 
     return (
-        <nav className="pb-6/10 mb-3/10 fixed bottom-3 left-0 z-10 w-full md:left-11">
-            <div className="container flex justify-center md:pl-15">
-                <div className="w-3/4 rounded-[1.475rem] bg-blue-600 shadow-xl md:w-1/2">
+        <nav className="pb-6/10 mb-3/10 fixed bottom-3 left-0 z-10 w-full m-0 p-0 pl-0 flex items-center justify-center">
+            <div className="w-3/4 mx-auto rounded-[1.475rem] bg-blue-600 shadow-xl md:w-fit">
                     <div className="vt/nav overflow-x-auto scroll-smooth rounded-[inherit] p-1.5">
-                        <div className="isolate grid grid-cols-[repeat(4,5.6875em)] md:grid-cols-[repeat(4,14.6875em)]">
+                        <div className="isolate grid grid-cols-4 gap-0 md:grid-cols-[repeat(4,14.6875em)]">
                             {navItems.map((item) => (
                                 <motion.a
                                     key={item.name}
@@ -45,7 +44,6 @@ export const NavigationBar = () => {
                             ))}
                         </div>
                     </div>
-                </div>
             </div>
         </nav>
     );
