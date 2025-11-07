@@ -8,16 +8,16 @@ export const CREATIVE_DIRECTION_CARDS: XpCardProps[] = [
         imgSrc: "/direction/Bliss capture.png"
     },
     {
-        title: "End of an Error Poster",
+        title: "End of an Error Campaign",
         description: "Jet magazine inspired shoot for the End of an Error Campaign",
         date: "2022",
         imgSrc: "/direction/EndOfAnError.jpg"
     },
     {
-        title: "NNYC Visual Identity",
-        description: "New York creative collective branding project",
+        title: "Cherie x Antilles Cafe Campaign",
+        description: "Photoshoot in collaboration with Antilles Cafe",
         date: "2022",
-        imgSrc: "/nnyc.png"
+        imgSrc: "/direction/cherie.png"
     },
     {
         title: "Machine of the Year",

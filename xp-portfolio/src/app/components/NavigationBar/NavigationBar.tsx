@@ -1,18 +1,9 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { HomeSvg, InfoSvg, PlaneSvg, ShopSvg } from '@/icons/'
 import { motion } from "motion/react"
 
 export const NavigationBar = () => {
-    const [activeItem, setActiveItem] = useState("home");
-    const handleItemClick = (item: string) => {
-        setActiveItem(item);
-    };
-    
-    useEffect((): void => {
-       setActiveItem(activeItem);
-    }, [activeItem, setActiveItem]);
-    
             
     const navItems = [
         { name: "home", label: "HOME", href: "/", icon: <HomeSvg />, external: false },
@@ -35,11 +26,10 @@ export const NavigationBar = () => {
                                     href={item.href}
                                     target={item.external ? "_blank" : undefined}
                                     rel={item.external ? "noopener noreferrer" : undefined}
-                                    onClick={() => setActiveItem(item.name)}
                                     whileTap={{ y: -10, transition: { type: "spring" } }}
                                 >
                                     {item.icon}
-                                    <span className="text-l md:text-md">{item.label}</span>
+                                    <span className="text-l md:text-md text-white">{item.label}</span>
                                 </motion.a>
                             ))}
                         </div>
