@@ -10,7 +10,7 @@ export const TypingHeader = () => {
     return (
         <>
             <h2>
-                I'm a {" "}
+                I&apos;m a {" "}
                 <ReactTyped
                     strings={TITLES}
                     typeSpeed={100}
