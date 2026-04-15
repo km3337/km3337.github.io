@@ -6,10 +6,13 @@ import styles from './HorizontalScrollCarousel.module.css'
 
 export interface HorizontalScrollCarouselProps {
     cards: XpCardProps[];
+    onCardSelect?: (card: XpCardProps) => void;
 }
 
-export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProps) => {
+export const HorizontalScrollCarousel = ({ cards, onCardSelect }: HorizontalScrollCarouselProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
+    const scrollLeftOnPointerDownRef = useRef<number | null>(null);
+    const blockCardClickRef = useRef(false);
     const { scrollXProgress } = useScroll({
         container: containerRef,
     });
@@ -21,6 +24,8 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
 
     const handleMouseDown = useCallback((e: React.MouseEvent) => {
         if (!containerRef.current) return;
+        blockCardClickRef.current = false;
+        scrollLeftOnPointerDownRef.current = containerRef.current.scrollLeft;
         setIsDragging(true);
         setStartX(e.pageX - containerRef.current.offsetLeft);
         setScrollLeft(containerRef.current.scrollLeft);
@@ -35,6 +40,14 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
     }, []);
 
     const handleMouseUp = useCallback(() => {
+        if (containerRef.current && scrollLeftOnPointerDownRef.current != null) {
+            if (
+                Math.abs(containerRef.current.scrollLeft - scrollLeftOnPointerDownRef.current) > 8
+            ) {
+                blockCardClickRef.current = true;
+            }
+        }
+        scrollLeftOnPointerDownRef.current = null;
         setIsDragging(false);
         if (containerRef.current) {
             containerRef.current.style.cursor = 'grab';
@@ -52,6 +65,8 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
     // Touch events for mobile
     const handleTouchStart = useCallback((e: React.TouchEvent) => {
         if (!containerRef.current) return;
+        blockCardClickRef.current = false;
+        scrollLeftOnPointerDownRef.current = containerRef.current.scrollLeft;
         setIsDragging(true);
         setStartX(e.touches[0].pageX - containerRef.current.offsetLeft);
         setScrollLeft(containerRef.current.scrollLeft);
@@ -65,8 +80,28 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
     }, [isDragging, startX, scrollLeft]);
 
     const handleTouchEnd = useCallback(() => {
+        if (containerRef.current && scrollLeftOnPointerDownRef.current != null) {
+            if (
+                Math.abs(containerRef.current.scrollLeft - scrollLeftOnPointerDownRef.current) > 8
+            ) {
+                blockCardClickRef.current = true;
+            }
+        }
+        scrollLeftOnPointerDownRef.current = null;
         setIsDragging(false);
     }, []);
+
+    const handleCardActivate = useCallback(
+        (card: XpCardProps) => {
+            if (!onCardSelect) return;
+            if (blockCardClickRef.current) {
+                blockCardClickRef.current = false;
+                return;
+            }
+            onCardSelect(card);
+        },
+        [onCardSelect]
+    );
 
     return (
         <div className="relative w-full">
@@ -91,7 +126,8 @@ export const HorizontalScrollCarousel = ({ cards }: HorizontalScrollCarouselProp
                     {cards.map((card, index) => (
                         <div
                             key={`${card.title}-${index}`}
-                            className="snap-center shrink-0 first:pl-8 last:pr-8"
+                            className={`snap-center shrink-0 first:pl-8 last:pr-8${onCardSelect ? ' cursor-pointer' : ''}`}
+                            onClick={() => handleCardActivate(card)}
                         >
                             <XpCard
                                 title={card.title}

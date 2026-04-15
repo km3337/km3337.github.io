@@ -1,0 +1,63 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.25rem, 5vw, 3.5rem);
+    background: rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+}
+
+/* Inner wrapper: stops backdrop clicks from closing when interacting with window */
+.shell {
+    position: relative;
+    width: 100%;
+    max-width: min(720px, 100%);
+    max-height: min(88vh, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/*
+ * Layout only — do not set box-shadow here; XP.css .window provides the blue inset frame.
+ * windowCustom from XpCard matches carousel cards (radius + overflow).
+ */
+.modalWindow {
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* Keeps XP .window-body margin: 8px; adds scroll when content is tall */
+.modalBody {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Inset text under image, same beige as XP window (not dialog gray) */
+.details {
+    padding: 8px 10px 10px;
+    background: #ece9d8;
+    flex-shrink: 0;
+}
+
+.detailsText {
+    margin: 0 0 0.5rem;
+    font-size: 11px;
+    line-height: 1.45;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+}
+
+.meta {
+    margin: 0;
+    font-size: 11px;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    color: #222;
+}

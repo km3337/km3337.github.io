@@ -9,7 +9,7 @@ export const NavigationBar = () => {
         { name: "home", label: "HOME", href: "/", icon: <HomeSvg />, external: false },
         { name: "about", label: "ABOUT", href: "/about", icon: <InfoSvg />, external: false },
         { name: "shop", label: "SHOP", href: "https://nullnyc.com/collections/all", icon: <ShopSvg/>, external: true },
-        { name: "contact", label: "CONTACT", href: "#", icon: <PlaneSvg/>, external: false },
+        { name: "contact", label: "CONTACT", href: "/contact", icon: <PlaneSvg/>, external: false },
     ];
 
     return (
