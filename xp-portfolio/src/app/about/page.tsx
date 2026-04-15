@@ -2,17 +2,18 @@
 import { TypingHeader } from "../components/TypingHeader/TypingHeader";
 import { XpCard } from "../components/XpCard";
 import { HorizontalLogos } from "../components/HorizontalLogos";
+import homeStyles from "../page.module.scss";
 import styles from "./page.module.css";
 
 const AboutImage = () => {
     return (
         <div className={styles.aboutImage}>
             <XpCard
-                title="DOOMSDAY"
-                description='A tribute to the illest villain'
-                date='Oct 2021'
+                title="KRISTIAN MENTOR"
+                description='Self portrait'
+                date='April 2026'
                 dimensionX={540}
-                imgSrc="/DOOMSDAY still.png"
+                imgSrc="/kris mentor.png"
             />
         </div>
     )
@@ -23,9 +24,15 @@ export default function Page() {
         <main className={`${styles.pageShell} egg-shell-backdrop egg-shell-about`}>
             <div className={styles.root}>
             <header className={styles.header}>
-                <h2 className={styles.title}>Hey, I&#39;m Kris!</h2>
+                <h2
+                    className={`${homeStyles.heading} text-8xl md:text-9xl mb-12 text-center`}
+                >
+                    Hey, I&#39;m Kris!
+                </h2>
                 <div className={styles.tagline}>
-                    <TypingHeader />
+                    <TypingHeader
+                        className={`${homeStyles.subHeading} text-sm md:text-lg text-center`}
+                    />
                 </div>
             </header>
 
@@ -39,7 +46,11 @@ export default function Page() {
                         He is currently a senior software engineer at Eventbrite, where he works on the Ads Experience team, building new features and infrastructure to scale and innovate.
                     </p>
 
-                    <h3 className={styles.sectionHeading}>Services</h3>
+                    <h3
+                        className={`${homeStyles.subHeading} text-md md:text-lg mb-12 text-center`}
+                    >
+                        Services
+                    </h3>
                     <ul className={styles.serviceList}>
                         <li>Full-stack Development</li>
                         <li>Creative Direction</li>
@@ -55,7 +66,10 @@ export default function Page() {
             </div>
 
             <section className={styles.clientsCarousel} aria-labelledby="clients-heading">
-                <h3 id="clients-heading" className={styles.sectionHeading}>
+                <h3
+                    id="clients-heading"
+                    className={`${homeStyles.subHeading} ${styles.clientsSectionHeading} text-md md:text-lg mb-12 text-center`}
+                >
                     Clients &amp; Collaborators
                 </h3>
                 <HorizontalLogos logoHeight={50} speed={25} />

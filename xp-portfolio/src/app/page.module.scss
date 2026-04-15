@@ -7,7 +7,7 @@
 }
 
 .heading {
-  font-family: 'Press Start 2P', monospace;
+  font-family: var(--font-press-start, "Press Start 2P", monospace);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: rgb(12, 12, 12);
@@ -16,7 +16,7 @@
 }
 
 .subHeading {
-  font-family: 'Press Start 2P', monospace;
+  font-family: var(--font-press-start, "Press Start 2P", monospace);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: rgb(12, 12, 12);

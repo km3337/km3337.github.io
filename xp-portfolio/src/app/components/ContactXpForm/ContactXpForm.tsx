@@ -98,7 +98,7 @@ export function ContactXpForm() {
             <div className={styles.page}>
             <div className={`window ${styles.windowWrap}`}>
                 <div className="title-bar">
-                    <div className="title-bar-text">Contact</div>
+                    <div className="title-bar-text">CONTACT</div>
                     <div className="title-bar-controls">
                         <button
                             type="button"
@@ -122,7 +122,7 @@ export function ContactXpForm() {
                             </p>
                         )}
                         <fieldset className={styles.fieldset}>
-                            <legend>Send a message</legend>
+                            <legend>SEND A MESSAGE</legend>
                             <input
                                 type="text"
                                 name="website"

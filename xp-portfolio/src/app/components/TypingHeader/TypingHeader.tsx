@@ -6,10 +6,10 @@ import { ReactTyped } from "react-typed";
 const TITLES = ['Full-stack Engineer', 'Creative Director', 'Copy writer', 'Graphic Designer', 'Animator']
 
 // TODO: When not in scroll view, pause loop.
-export const TypingHeader = () => {
+export const TypingHeader = ({ className = '' }: { className?: string }) => {
     return (
         <>
-            <h2>
+            <h2 className={className}>
                 I&apos;m a {" "}
                 <ReactTyped
                     strings={TITLES}
