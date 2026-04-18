@@ -3,6 +3,14 @@
     box-sizing: border-box;
 }
 
+.titleBarCustom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    height: 20%;
+}
+
 .page {
     position: relative;
     z-index: 2;

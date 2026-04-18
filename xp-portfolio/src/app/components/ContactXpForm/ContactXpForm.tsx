@@ -77,10 +77,10 @@ export function ContactXpForm() {
                         data.error === 'invalid_from'
                             ? 'Please enter a valid email address.'
                             : data.error === 'invalid_subject'
-                              ? 'Please add a subject.'
-                              : data.error === 'invalid_inquiry'
-                                ? 'Please add your inquiry.'
-                                : 'Something went wrong. Try again or use your email app.',
+                                ? 'Please add a subject.'
+                                : data.error === 'invalid_inquiry'
+                                    ? 'Please add your inquiry.'
+                                    : 'Something went wrong. Try again or use your email app.',
                 })
                 setStatusLine('Error')
             } catch {
@@ -96,92 +96,94 @@ export function ContactXpForm() {
     return (
         <div className={`${styles.pageShell} egg-shell-backdrop egg-shell-contact`}>
             <div className={styles.page}>
-            <div className={`window ${styles.windowWrap}`}>
-                <div className="title-bar">
-                    <div className="title-bar-text">CONTACT</div>
-                    <div className="title-bar-controls">
-                        <button
-                            type="button"
-                            aria-label="Close"
-                            onClick={() => router.push('/')}
-                        />
+                <div className={`window ${styles.windowWrap}`}>
+                    <div className={`title-bar ${styles.titleBarCustom}`}>
+                        <div className="title-bar-text">CONTACT</div>
+                        <div className="title-bar-controls">
+                            <button
+                                type="button"
+                                aria-label="Close"
+                                onClick={() => router.push('/')}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="window-body">
-                    <form className={styles.form} onSubmit={submit} noValidate>
-                        {banner && (
-                            <p
-                                className={`${styles.alert} ${
-                                    banner.type === 'error'
+                    <div className="window-body">
+                        <form className={styles.form} onSubmit={submit} noValidate>
+                            {banner && (
+                                <p
+                                    className={`${styles.alert} ${banner.type === 'error'
                                         ? styles.alertError
                                         : styles.alertSuccess
-                                }`}
-                                role="alert"
-                            >
-                                {banner.text}
-                            </p>
-                        )}
-                        <fieldset className={styles.fieldset}>
-                            <legend>SEND A MESSAGE</legend>
-                            <input
-                                type="text"
-                                name="website"
-                                value={website}
-                                onChange={(e) => setWebsite(e.target.value)}
-                                tabIndex={-1}
-                                autoComplete="off"
-                                className={styles.honeypot}
-                                aria-hidden="true"
-                            />
-                            <div className={`field-row-stacked ${styles.stacked}`}>
-                                <label htmlFor="contact-from">From:</label>
+                                        }`}
+                                    role="alert"
+                                >
+                                    {banner.text}
+                                </p>
+                            )}
+                            <fieldset className={styles.fieldset}>
+                                <legend>SEND A MESSAGE</legend>
                                 <input
-                                    id="contact-from"
-                                    type="email"
-                                    name="from"
-                                    value={from}
-                                    onChange={(e) => setFrom(e.target.value)}
-                                    placeholder="enter your email"
-                                    required
-                                    autoComplete="email"
-                                />
-                            </div>
-                            <div className={`field-row-stacked ${styles.stacked}`}>
-                                <label htmlFor="contact-subject">Subject:</label>
-                                <input
-                                    id="contact-subject"
                                     type="text"
-                                    name="subject"
-                                    value={subject}
-                                    onChange={(e) => setSubject(e.target.value)}
-                                    required
+                                    name="website"
+                                    value={website}
+                                    onChange={(e) => setWebsite(e.target.value)}
+                                    tabIndex={-1}
+                                    autoComplete="off"
+                                    className={styles.honeypot}
+                                    aria-hidden="true"
                                 />
+                                <div className={`field-row-stacked ${styles.stacked}`}>
+                                    <label htmlFor="contact-from">From:</label>
+                                    <input
+                                        id="contact-from"
+                                        type="email"
+                                        name="from"
+                                        value={from}
+                                        onChange={(e) => setFrom(e.target.value)}
+                                        placeholder="enter your email"
+                                        required
+                                        autoComplete="email"
+                                    />
+                                </div>
+                                <div className={`field-row-stacked ${styles.stacked}`}>
+                                    <label htmlFor="contact-subject">Subject:</label>
+                                    <input
+                                        id="contact-subject"
+                                        type="text"
+                                        name="subject"
+                                        value={subject}
+                                        onChange={(e) => setSubject(e.target.value)}
+                                        required
+                                    />
+                                </div>
+
+                                <div className={`field-row-stacked ${styles.stacked}`}>
+                                    <label htmlFor="contact-inquiry">Inquiry:</label>
+                                    <fieldset>
+                                        <textarea
+                                            id="contact-inquiry"
+                                            name="inquiry"
+                                            value={inquiry}
+                                            onChange={(e) => setInquiry(e.target.value)}
+                                            rows={8}
+                                            required
+                                        />
+                                    </fieldset>
+                                </div>
+                            </fieldset>
+                            <div className={styles.actions}>
+                                <button type="submit" disabled={pending}>
+                                    {pending ? 'Sending…' : 'Send'}
+                                </button>
                             </div>
-                            <div className={`field-row-stacked ${styles.stacked}`}>
-                                <label htmlFor="contact-inquiry">Inquiry:</label>
-                                <textarea
-                                    id="contact-inquiry"
-                                    name="inquiry"
-                                    value={inquiry}
-                                    onChange={(e) => setInquiry(e.target.value)}
-                                    rows={8}
-                                    required
-                                />
-                            </div>
-                        </fieldset>
-                        <div className={styles.actions}>
-                            <button type="submit" disabled={pending}>
-                                {pending ? 'Sending…' : 'Send'}
-                            </button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div className="status-bar">
+                        <p className={`status-bar-field ${styles.statusHint}`}>
+                            {statusLine}
+                        </p>
+                    </div>
                 </div>
-                <div className="status-bar">
-                    <p className={`status-bar-field ${styles.statusHint}`}>
-                        {statusLine}
-                    </p>
-                </div>
-            </div>
             </div>
         </div>
     )

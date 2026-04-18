@@ -15,9 +15,10 @@ export const TypingHeader = ({ className = '' }: { className?: string }) => {
                     strings={TITLES}
                     typeSpeed={100}
                     loop
-                    backSpeed={20}
-                    cursorChar="|"
+                    backSpeed={40}
+                    cursorChar="_"
                     showCursor={true}
+                    backDelay={1100}
                 />
                 with a passion for bringing pixels to life.
             </h2>

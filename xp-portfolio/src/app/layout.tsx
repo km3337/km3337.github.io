@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/NULL_Inside_White.png" />
       </Head>
       <body className={`${inter.className} ${pressStart2P.variable}`}>
         <NavigationBar />
