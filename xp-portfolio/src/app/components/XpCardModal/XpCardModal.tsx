@@ -69,17 +69,24 @@ export function XpCardModal({ card, onClose }: XpCardModalProps) {
                         </div>
                     </div>
                     <div
-                        className={`window-body p-0 relative overflow-hidden ${styles.modalBody}`}
+                        className={`window-body p-0  gap-y-2 relative overflow-hidden ${styles.modalBody}`}
                     >
                         <img
                             src={card.imgSrc}
                             alt={card.title}
                             className={cardStyles.cardImage}
                         />
-                        <div id={descId} className={styles.details}>
-                            <p className={styles.detailsText}>{card.description}</p>
-                            <p className={styles.meta}>Year: {card.date}</p>
-                        </div>
+                        {card.longDescription && (
+                            <fieldset>
+                                <div id={descId} className={styles.details}>
+                                    <p className={styles.detailsText}>{card.description}</p>
+                                    {card.longDescription && (
+                                        <p className={styles.longDescription}>{card.longDescription}</p>
+                                    )}
+                                </div>
+                            </fieldset>
+                        )}
+
                     </div>
                     <div className={`status-bar ${cardStyles.statusBarCustom}`}>
                         <p className="status-bar-field truncate text-md">

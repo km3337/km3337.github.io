@@ -7,6 +7,8 @@ import { motion } from "motion/react"
 export interface XpCardProps {
     title: string;
     description: string;
+    longDescription?: string;
+    modalTitle?: string;
     date: string;
     imgSrc: string;
     dimensionX?: number; // Made optional since we'll use responsive widths

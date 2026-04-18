@@ -5,25 +5,30 @@ export const CREATIVE_DIRECTION_CARDS: XpCardProps[] = [
         title: "Bliss Zine Showcase",
         description: "Editorial shoot for Dekopon Magazine",
         date: "2024",
-        imgSrc: "/direction/Bliss capture.png"
+        imgSrc: "/direction/Bliss capture.png",
+        modalTitle: "Bliss Zine Showcase",
+        longDescription: " A dreamy editorial shoot for Dekopon Magazine, showcasing the timeless Bliss beanie. Special shouts out to  @attackisaiah for photography and @donartistry for styling."
     },
     {
         title: "End of an Error Campaign",
         description: "Jet magazine inspired shoot for the End of an Error Campaign",
         date: "2022",
-        imgSrc: "/direction/EndOfAnError.jpg"
+        imgSrc: "/direction/EndOfAnError.jpg",
+        longDescription: "A campaign inspired by the iconic Jet Magazine and a vintage UNO ad, celebrating the release of the End of an Error collection. This campaign explored the idea of taking a break from the chaos of today, and included various pieces of loungewear and accessories that let us truly experience comfort. Shot by @andreuncut, and assisted by Lisa Isaac."
     },
     {
         title: "Cherie x Antilles Cafe Campaign",
         description: "Photoshoot in collaboration with Antilles Cafe",
         date: "2022",
-        imgSrc: "/direction/cherie.png"
+        imgSrc: "/direction/cherie.png",
+        longDescription: "A campaign in collaboration with Antilles Cafe, a cafe that aims to celebrate shared Haitian and Dominican Heritage in Brooklyn. The shoot took place at the cafe and featured models from both diasporas, as well as apparel designed for the occasion.  Shot by Darwin Pierre of Exit XIII Studios."
     },
     {
         title: "Machine of the Year",
         description: "Poster for the Machine of the Year Campaign",
         date: "2021",
-        imgSrc: "/machine of the year full.png"
+        imgSrc: "/machine of the year full.png",
+        longDescription: "A poster created for the Machine of the Year campaign, inspired by the 1983 Time magazine cover story published on January 3rd. This article acknowledged the computers impact on society, and this collection embodied this in the form of a streetwear capsule. Embroidered Beanies, hoodies, and graphic tees inspired by my childhood memories. Poster design by Adrianne ETC."
     }
 ];
 
