@@ -79,10 +79,8 @@ export function XpCardModal({ card, onClose }: XpCardModalProps) {
                         {card.longDescription && (
                             <fieldset>
                                 <div id={descId} className={styles.details}>
-                                    <p className={styles.detailsText}>{card.description}</p>
-                                    {card.longDescription && (
-                                        <p className={styles.longDescription}>{card.longDescription}</p>
-                                    )}
+                                    <p className={styles.detailsText}>{card.modalTitle}</p>
+                                    <p className={styles.longDescription}>{card.longDescription}</p>
                                 </div>
                             </fieldset>
                         )}

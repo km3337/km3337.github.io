@@ -6,7 +6,6 @@ export const CREATIVE_DIRECTION_CARDS: XpCardProps[] = [
         description: "Editorial shoot for Dekopon Magazine",
         date: "2024",
         imgSrc: "/direction/Bliss capture.png",
-        modalTitle: "Bliss Zine Showcase",
         longDescription: " A dreamy editorial shoot for Dekopon Magazine, showcasing the timeless Bliss beanie. Special shouts out to  @attackisaiah for photography and @donartistry for styling."
     },
     {
@@ -133,41 +132,35 @@ export const ANIMATION_CARDS: XpCardProps[] = [
 // Sample data for Merchandise carousel
 export const PRODUCT_CARDS: XpCardProps[] = [
     {
+        title: "Tempted to Touch Oxford",
+        description: "Screen printed, cut and sewn oxford shirt",
+        date: "2023",
+        imgSrc: "/products/tempted_to_touch.jpg"
+    },
+    {
+        title: "NULL BOY Hoodie",
+        description: "Nintendo inspired embroidered hoodie, from the MACHINE OF THE YEAR collection",
+        date: "2022",
+        imgSrc: "/products/nullboy.jpg"
+    },
+    {
+        title: "NULL Playing Cards",
+        description: "Pixelated playing cards",
+        date: "2022",
+        imgSrc: "/products/NULL UNO Spread.jpg"
+    },
+    {
+        title: "Machine of the year ",
+        description: "Embroidered Hoodie from the MACHINE OF THE YEAR collection",
+        date: "2022",
+        imgSrc: "/products/machine of the year.jpg"
+    },
+    {
         title: "Hello World Tee",
-        description: "Programming-inspired streetwear design",
+        description: "The first concept, made into a tshirt.",
         date: "2023",
         imgSrc: "/hello world tee final.png"
     },
-    {
-        title: "NULL Inside Collection",
-        description: "Minimalist tech-inspired apparel line",
-        date: "2022",
-        imgSrc: "/NULL_Inside white.png"
-    },
-    {
-        title: "Bushwick Bear Design",
-        description: "Brooklyn neighborhood mascot merchandise",
-        date: "2021",
-        imgSrc: "/bushwick bear.png"
-    },
-    {
-        title: "Rainbow Telfar Bag Series",
-        description: "Colorful luxury handbag collaboration concept",
-        date: "2022",
-        imgSrc: "/rainbow telfar blue.png"
-    },
-    {
-        title: "Pilots Finished Apparel",
-        description: "Aviation-themed streetwear collection",
-        date: "2023",
-        imgSrc: "/pilots finished.png"
-    },
-    {
-        title: "Posted Shades Collection",
-        description: "Sunglasses and eyewear design series",
-        date: "2023",
-        imgSrc: "/posted shades preview.png"
-    }
 ];
 
 

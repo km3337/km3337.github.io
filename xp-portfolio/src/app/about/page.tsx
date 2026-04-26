@@ -10,10 +10,10 @@ const AboutImage = () => {
         <div className={styles.aboutImage}>
             <XpCard
                 title="KRISTIAN MENTOR"
-                description='Self portrait'
+                description='A man and his best friend'
                 date='April 2026'
                 dimensionX={540}
-                imgSrc="/kris mentor.png"
+                imgSrc="/Kristian and Kujo.png"
             />
         </div>
     )
