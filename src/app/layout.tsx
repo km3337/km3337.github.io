@@ -12,7 +12,7 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: " NULL INSIDE - Kristian Mentor's Portfolio app",
+  title: " NULL INSIDE - Kristian Mentor's portfolio",
   description: "A creative compilation of my work. ",
 };
 
@@ -24,6 +24,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <meta property="og:title" content="NULL INSIDE - Kristian Mentor's portfolio" />
+        <meta property="og:description" content="A creative compilation of my work. " />
+        <meta property="og:image" content="/NULL_Inside_White.png" />
+        <meta property="og:url" content="https://nullinside.net" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="NULL INSIDE" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/NULL_Inside_White.png" />
       </Head>
