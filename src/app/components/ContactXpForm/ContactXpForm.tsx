@@ -5,16 +5,7 @@ import { useRouter } from 'next/navigation'
 import 'xp.css/dist/XP.css'
 import styles from './ContactXpForm.module.css'
 
-const CONTACT_EMAIL = 'kmentor@nullnyc.com'
-
-function buildMailtoUrl(from: string, subject: string, inquiry: string): string {
-    const body = `From: ${from}\n\n${inquiry}`
-    const params = new URLSearchParams({
-        subject: subject.trim() || 'Portfolio inquiry',
-        body,
-    })
-    return `mailto:${CONTACT_EMAIL}?${params.toString()}`
-}
+const CONTACT_FORM_NAME = 'contact'
 
 export function ContactXpForm() {
     const router = useRouter()
@@ -37,23 +28,21 @@ export function ContactXpForm() {
             setStatusLine('Sending…')
 
             try {
-                const res = await fetch('/api/contact', {
+                const payload = new URLSearchParams({
+                    'form-name': CONTACT_FORM_NAME,
+                    from,
+                    subject,
+                    inquiry,
+                    website,
+                }).toString()
+
+                const res = await fetch('/', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        from,
-                        subject,
-                        inquiry,
-                        website,
-                    }),
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: payload,
                 })
 
-                const data = (await res.json().catch(() => ({}))) as {
-                    ok?: boolean
-                    error?: string
-                }
-
-                if (res.ok && data.ok) {
+                if (res.ok) {
                     setBanner({
                         type: 'success',
                         text: 'Message sent. Thanks for reaching out!',
@@ -65,27 +54,17 @@ export function ContactXpForm() {
                     return
                 }
 
-                if (res.status === 503 && data.error === 'not_configured') {
-                    window.location.href = buildMailtoUrl(from, subject, inquiry)
-                    setStatusLine('Opening mail app…')
-                    return
-                }
-
                 setBanner({
                     type: 'error',
-                    text:
-                        data.error === 'invalid_from'
-                            ? 'Please enter a valid email address.'
-                            : data.error === 'invalid_subject'
-                                ? 'Please add a subject.'
-                                : data.error === 'invalid_inquiry'
-                                    ? 'Please add your inquiry.'
-                                    : 'Something went wrong. Try again or use your email app.',
+                    text: 'Something went wrong. Please try again.',
                 })
                 setStatusLine('Error')
             } catch {
-                window.location.href = buildMailtoUrl(from, subject, inquiry)
-                setStatusLine('Opening mail app…')
+                setBanner({
+                    type: 'error',
+                    text: 'Network error. Please try again.',
+                })
+                setStatusLine('Offline')
             } finally {
                 setPending(false)
             }
@@ -108,7 +87,16 @@ export function ContactXpForm() {
                         </div>
                     </div>
                     <div className="window-body">
-                        <form className={styles.form} onSubmit={submit} noValidate>
+                        <form
+                            className={styles.form}
+                            name={CONTACT_FORM_NAME}
+                            method="POST"
+                            data-netlify="true"
+                            netlify-honeypot="website"
+                            onSubmit={submit}
+                            noValidate
+                        >
+                            <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
                             {banner && (
                                 <p
                                     className={`${styles.alert} ${banner.type === 'error'
