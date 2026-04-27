@@ -25,7 +25,7 @@ export default function Page() {
             <div className={styles.root}>
                 <header className={styles.header}>
                     <h2
-                        className={`${homeStyles.heading} text-8xl md:text-9xl mb-12 text-center`}
+                        className={`${homeStyles.heading} text-6xl sm:text-7xl md:text-9xl leading-tight md:leading-normal mb-12 text-center`}
                     >
                         Hey, I&#39;m Kris!
                     </h2>
