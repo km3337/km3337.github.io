@@ -20,26 +20,24 @@ export function ContactXpForm() {
         text: string
     } | null>(null)
 
-    const submit = useCallback(
-        async (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault()
+    const handleSubmit = useCallback(
+        async (event: React.FormEvent<HTMLFormElement>) => {
+            event.preventDefault()
             setBanner(null)
             setPending(true)
             setStatusLine('Sending…')
 
             try {
-                const payload = new URLSearchParams({
-                    'form-name': CONTACT_FORM_NAME,
-                    from,
-                    subject,
-                    inquiry,
-                    website,
-                }).toString()
+                const formData = new FormData(event.currentTarget)
+                const payload = new URLSearchParams()
+                for (const [key, value] of formData.entries()) {
+                    payload.append(key, String(value))
+                }
 
-                const res = await fetch('/', {
+                const res = await fetch('/__forms.html', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: payload,
+                    body: payload.toString(),
                 })
 
                 if (res.ok) {
@@ -93,7 +91,7 @@ export function ContactXpForm() {
                             method="POST"
                             data-netlify="true"
                             netlify-honeypot="website"
-                            onSubmit={submit}
+                            onSubmit={handleSubmit}
                             noValidate
                         >
                             <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
