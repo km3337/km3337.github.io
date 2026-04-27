@@ -27,7 +27,9 @@ export default function Page() {
                     <h2
                         className={`${homeStyles.heading} text-6xl sm:text-7xl md:text-9xl leading-tight md:leading-normal mb-12 text-center`}
                     >
-                        Hey, I&#39;m Kris!
+                        Hey,
+                        <br />
+                        I&#39;m Kris!
                     </h2>
                     <div className={styles.tagline}>
                         <TypingHeader
