@@ -63,7 +63,7 @@ export default function Home() {
 
       {/* Gallery Section */}
       <section className="min-h-screen py-20 px-4 md:px-8">
-        <h2 className={`${styles.heading} text-5xl sm:text-7xl md:text-9xl mb-12 text-center`}>
+        <h2 className={`${styles.heading} mb-12 text-center`}>
           GALLERY
         </h2>
         <motion.div className=" flex flex-col mt-8 mb-16 gap-16">

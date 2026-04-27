@@ -9,10 +9,11 @@
 .heading {
   font-family: var(--font-press-start, "Press Start 2P", monospace);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: clamp(0.02em, 0.35vw, 0.1em);
   color: rgb(12, 12, 12);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-size: 5rem;
+  font-size: clamp(2.1rem, 11vw, 9rem);
+  line-height: 1.15;
 }
 
 .subHeading {
@@ -34,8 +35,8 @@
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .heading {
-    font-size: 4rem;
-    letter-spacing: 0.05em;
+    font-size: clamp(1.8rem, 10vw, 3rem);
+    letter-spacing: 0.02em;
   }
 
   .subHeading {
@@ -44,9 +45,17 @@
   }
 }
 
+@media (max-width: 380px) {
+  .heading {
+    font-size: clamp(1.55rem, 9vw, 2.2rem);
+    letter-spacing: 0.015em;
+    line-height: 1.2;
+  }
+}
+
 @media (min-width: 641px) and (max-width: 1024px) {
   .heading {
-    font-size: 3rem;
+    font-size: clamp(3rem, 9vw, 5rem);
   }
 
   .subHeading {
