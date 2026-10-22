@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { Tile } from '../Tile'
 import DownArrowCubed from '../Icons/ArrowDownIcon.svg'
+import { TAGLINE } from '../../constants'
 
 export const HeroGrid = () => {
     return (
@@ -18,6 +19,9 @@ export const HeroGrid = () => {
                     src="/NULL_Inside white.png"
                     alt="NULL Inside"
                 />
+                <p className="max-w-xs md:max-w-xl px-4 text-center text-white text-[10px] md:text-sm leading-relaxed font-[family-name:var(--font-press-start)]">
+                    {TAGLINE}
+                </p>
                 <motion.a
                     href="#work"
                     aria-label="Scroll to work"
