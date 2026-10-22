@@ -18,6 +18,7 @@ export interface CaseStudyMetric {
 
 export interface CaseStudy {
     slug: string;
+    draft?: boolean; // drafts only show during `npm run dev`
     title: string;
     year: string;
     tags: CaseStudyTag[];
@@ -25,7 +26,7 @@ export interface CaseStudy {
     result: string; // one-line result for the home page tile, e.g. "Sold out in 48 hrs"
     role: string;
     collaborators?: string[];
-    heroImage: CaseStudyImage;
+    heroImage?: CaseStudyImage;
     challenge: string;
     decisions: CaseStudyDecision[];
     outcome: {
@@ -36,7 +37,37 @@ export interface CaseStudy {
 }
 
 // Real case studies go here. Order is the order they show on the site.
-export const CASE_STUDIES: CaseStudy[] = [];
+export const CASE_STUDIES: CaseStudy[] = [
+    {
+        slug: "instant-ads",
+        draft: true,
+        title: "Instant Ads",
+        year: "TODO",
+        tags: ["engineering"],
+        summary: "A lightweight, modular way for organizers to launch Eventbrite ads from anywhere in the organizer workspace.",
+        result: "TODO: one-line result",
+        role: "Senior Software Engineer, Ads Experience",
+        collaborators: [],
+        challenge: "Organizers had a hard time getting from core event management to the ad creation platform. Engineering was on a holiday time crunch and needed a solution that was quick, stable, and worked with both the legacy organizer pages and the new rebrand.",
+        decisions: [
+            {
+                heading: "Bring the ad flow to the organizer",
+                body: "Rather than forcing users to navigate back and forth between separate experiences, and rebuilding multiple components, I reused components from our new design system and integrated a smaller, portable version of our ad creation workflow.",
+            },
+            {
+                heading: "A lightweight, modular form",
+                body: "A lightweight module creates a smaller version of our existing form object, paired with validations from our Stripe integration. Entry points use the organizer's existing ad creation history to change the experience they see.",
+            },
+            {
+                heading: "Budget suggestions from real spend",
+                body: "We updated older endpoints to include a suggested budget bucket based on each organizer's annual spend. Organizers who ran more ads were recommended a budget based on their average spend. Organizers new to the ad platform were recommended budget and duration combinations statistically shown to raise their chances of event success.",
+            },
+        ],
+        outcome: {
+            summary: "TODO: what happened after launch.",
+        },
+    },
+];
 
 // Placeholder so the template can be previewed at /work/example during `npm run dev`.
 // It is never included in production builds.
@@ -69,7 +100,9 @@ const EXAMPLE_CASE_STUDY: CaseStudy = {
 };
 
 export const getCaseStudies = (): CaseStudy[] =>
-    process.env.NODE_ENV === "development" ? [...CASE_STUDIES, EXAMPLE_CASE_STUDY] : CASE_STUDIES;
+    process.env.NODE_ENV === "development"
+        ? [...CASE_STUDIES, EXAMPLE_CASE_STUDY]
+        : CASE_STUDIES.filter((study) => !study.draft);
 
 export const getCaseStudy = (slug: string): CaseStudy | undefined =>
     getCaseStudies().find((study) => study.slug === slug);

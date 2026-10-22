@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         openGraph: {
             title: `${study.title} — NULL INSIDE`,
             description: study.summary,
-            images: [{ url: study.heroImage.src, alt: study.heroImage.alt }],
+            images: study.heroImage ? [{ url: study.heroImage.src, alt: study.heroImage.alt }] : undefined,
         },
     };
 }
@@ -44,12 +44,14 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                     <p className="text-lg md:text-xl">{study.summary}</p>
                 </header>
 
-                <figure>
-                    <img className="w-full h-auto" src={study.heroImage.src} alt={study.heroImage.alt} />
-                    {study.heroImage.caption && (
-                        <figcaption className="mt-2 text-sm opacity-70">{study.heroImage.caption}</figcaption>
-                    )}
-                </figure>
+                {study.heroImage && (
+                    <figure>
+                        <img className="w-full h-auto" src={study.heroImage.src} alt={study.heroImage.alt} />
+                        {study.heroImage.caption && (
+                            <figcaption className="mt-2 text-sm opacity-70">{study.heroImage.caption}</figcaption>
+                        )}
+                    </figure>
+                )}
 
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
