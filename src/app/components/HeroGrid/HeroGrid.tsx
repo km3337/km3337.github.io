@@ -18,7 +18,10 @@ export const HeroGrid = () => {
                     src="/NULL_Inside white.png"
                     alt="NULL Inside"
                 />
-                <motion.div
+                <motion.a
+                    href="#work"
+                    aria-label="Scroll to work"
+                    className="pointer-events-auto"
                     animate={{ y: [0, 8, 0] }}
                     transition={{
                         repeat: Infinity,
@@ -27,7 +30,7 @@ export const HeroGrid = () => {
                     }}
                 >
                     <DownArrowCubed width={45} height={45} fill="white" />
-                </motion.div>
+                </motion.a>
             </div>
         </>
     )

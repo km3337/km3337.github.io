@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="min-h-screen py-20 px-4 md:px-8">
+      <section id="work" className="min-h-screen py-20 px-4 md:px-8">
         <h2 className={`${styles.heading} mb-12 text-center`}>
           GALLERY
         </h2>
