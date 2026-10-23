@@ -78,7 +78,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         slug: "the-children",
         draft: true,
         title: "The Children",
-        year: "TODO",
+        year: "2025",
         tags: ["engineering", "creative"],
         summary: "Legally distinct versions of Reddit, Google Search, Google Maps and an iPhone call, built as web apps to run live on set for the film The Children.",
         result: "TODO: one-line result",
@@ -102,7 +102,7 @@ export const CASE_STUDIES: CaseStudy[] = [
             },
             {
                 heading: "WroteIt, a legally distinct Reddit",
-                body: "TODO: how you built it and what made it read as Reddit on camera without being Reddit.",
+                body: "Stylistically, WroteIt looks just like Reddit, so it reads instantly on camera, while its own name and branding keep it legally distinct.",
             },
         ],
         outcome: {
@@ -116,6 +116,13 @@ export const CASE_STUDIES: CaseStudy[] = [
                 wide: true,
                 alt: "Searching an address in the simulated search engine, then routing to it in PinPoints",
                 caption: "Searching an address, then routing to it in PinPoints, the Maps simulation.",
+            },
+            {
+                type: "video",
+                src: "/work/the-children/wroteit.mp4",
+                poster: "/work/the-children/wroteit-poster.jpg",
+                alt: "Scrolling a thread on WroteIt, the Reddit simulation, in dark mode",
+                caption: "WroteIt, the Reddit simulation, in a scene 13 thread.",
             },
             {
                 type: "video",
