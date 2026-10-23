@@ -6,6 +6,7 @@ export interface CaseStudyImage {
     caption?: string;
     type?: "image" | "video"; // videos autoplay muted on loop
     poster?: string; // still frame shown before a video loads
+    wide?: boolean; // spans both columns in the image grid, for landscape media
 }
 
 export interface CaseStudyDecision {
@@ -96,6 +97,10 @@ export const CASE_STUDIES: CaseStudy[] = [
                 body: "I proposed building web applications that render natively on each device, simulating the apps the scenes needed while avoiding potential lawsuits.",
             },
             {
+                heading: "One app, a route per experience",
+                body: "Each experience (search, WroteIt, PinPoints maps, the medical site and the iPhone call) is its own route in a single Next.js app. Query params force redirects between the phone call and the mobile search results, so the sequence could play on cue while the live feed was recorded on a phone.",
+            },
+            {
                 heading: "WroteIt, a legally distinct Reddit",
                 body: "TODO: how you built it and what made it read as Reddit on camera without being Reddit.",
             },
@@ -104,6 +109,14 @@ export const CASE_STUDIES: CaseStudy[] = [
             summary: "TODO: what happened on set.",
         },
         images: [
+            {
+                type: "video",
+                src: "/work/the-children/search-to-maps.mp4",
+                poster: "/work/the-children/search-to-maps-poster.jpg",
+                wide: true,
+                alt: "Searching an address in the simulated search engine, then routing to it in PinPoints",
+                caption: "Searching an address, then routing to it in PinPoints, the Maps simulation.",
+            },
             {
                 type: "video",
                 src: "/work/the-children/phone-call.mp4",

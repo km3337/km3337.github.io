@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 const Media = ({ media }: { media: CaseStudyImage }) => (
-    <figure>
+    <figure className={media.wide ? "md:col-span-2" : undefined}>
         {media.type === "video" ? (
             <video
                 className="w-auto max-w-full max-h-[80vh] mx-auto"
