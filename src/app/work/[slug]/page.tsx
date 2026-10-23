@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import homeStyles from "../../page.module.scss";
-import { getCaseStudies, getCaseStudy } from "../caseStudies";
+import { getCaseStudies, getCaseStudy, type CaseStudyImage } from "../caseStudies";
 import { DEMOS } from "../demos";
 
 type Params = Promise<{ slug: string }>;
@@ -24,10 +24,32 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
         openGraph: {
             title: `${study.title} — NULL INSIDE`,
             description: study.summary,
-            images: study.heroImage ? [{ url: study.heroImage.src, alt: study.heroImage.alt }] : undefined,
+            images: study.heroImage
+                ? [{ url: study.heroImage.poster ?? study.heroImage.src, alt: study.heroImage.alt }]
+                : undefined,
         },
     };
 }
+
+const Media = ({ media }: { media: CaseStudyImage }) => (
+    <figure>
+        {media.type === "video" ? (
+            <video
+                className="w-auto max-w-full max-h-[80vh] mx-auto"
+                src={media.src}
+                poster={media.poster}
+                aria-label={media.alt}
+                autoPlay
+                muted
+                loop
+                playsInline
+            />
+        ) : (
+            <img className="w-full h-auto" src={media.src} alt={media.alt} />
+        )}
+        {media.caption && <figcaption className="mt-2 text-sm opacity-70">{media.caption}</figcaption>}
+    </figure>
+);
 
 export default async function CaseStudyPage({ params }: { params: Params }) {
     const { slug } = await params;
@@ -49,12 +71,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                 {Demo ? (
                     <Demo />
                 ) : study.heroImage && (
-                    <figure>
-                        <img className="w-full h-auto" src={study.heroImage.src} alt={study.heroImage.alt} />
-                        {study.heroImage.caption && (
-                            <figcaption className="mt-2 text-sm opacity-70">{study.heroImage.caption}</figcaption>
-                        )}
-                    </figure>
+                    <Media media={study.heroImage} />
                 )}
 
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -90,12 +107,7 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                 {study.images && study.images.length > 0 && (
                     <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {study.images.map((image) => (
-                            <figure key={image.src}>
-                                <img className="w-full h-auto" src={image.src} alt={image.alt} />
-                                {image.caption && (
-                                    <figcaption className="mt-2 text-sm opacity-70">{image.caption}</figcaption>
-                                )}
-                            </figure>
+                            <Media key={image.src} media={image} />
                         ))}
                     </section>
                 )}

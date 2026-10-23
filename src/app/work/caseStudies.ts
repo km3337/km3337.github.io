@@ -4,6 +4,8 @@ export interface CaseStudyImage {
     src: string;
     alt: string;
     caption?: string;
+    type?: "image" | "video"; // videos autoplay muted on loop
+    poster?: string; // still frame shown before a video loads
 }
 
 export interface CaseStudyDecision {
@@ -80,6 +82,13 @@ export const CASE_STUDIES: CaseStudy[] = [
         summary: "Legally distinct versions of Reddit, Google Search, Google Maps and an iPhone call, built as web apps to run live on set for the film The Children.",
         result: "TODO: one-line result",
         role: "Lead Playback Animator",
+        heroImage: {
+            type: "video",
+            src: "/work/the-children/on-set.mp4",
+            poster: "/work/the-children/on-set-poster.jpg",
+            alt: "On-set camera monitor showing the simulated medical site during filming",
+            caption: "On set: the simulated medical site on the camera monitor.",
+        },
         challenge: "The production needed screen content running on phones, laptops and desktop computers while filming, with several shots of the apps running directly on those devices. Showing the real apps on screen wasn't an option.",
         decisions: [
             {
@@ -94,6 +103,15 @@ export const CASE_STUDIES: CaseStudy[] = [
         outcome: {
             summary: "TODO: what happened on set.",
         },
+        images: [
+            {
+                type: "video",
+                src: "/work/the-children/phone-call.mp4",
+                poster: "/work/the-children/phone-call-poster.jpg",
+                alt: "Simulated iPhone incoming call screen from Dad",
+                caption: "The iPhone incoming call simulation.",
+            },
+        ],
     },
 ];
 
