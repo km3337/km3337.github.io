@@ -71,6 +71,30 @@ export const CASE_STUDIES: CaseStudy[] = [
             ],
         },
     },
+    {
+        slug: "the-children",
+        draft: true,
+        title: "The Children",
+        year: "TODO",
+        tags: ["engineering", "creative"],
+        summary: "Legally distinct versions of Reddit, Google Search, Google Maps and an iPhone call, built as web apps to run live on set for the film The Children.",
+        result: "TODO: one-line result",
+        role: "Lead Playback Animator",
+        challenge: "The production needed screen content running on phones, laptops and desktop computers while filming, with several shots of the apps running directly on those devices. Showing the real apps on screen wasn't an option.",
+        decisions: [
+            {
+                heading: "Real web apps instead of video feeds",
+                body: "I proposed building web applications that render natively on each device, simulating the apps the scenes needed while avoiding potential lawsuits.",
+            },
+            {
+                heading: "WroteIt, a legally distinct Reddit",
+                body: "TODO: how you built it and what made it read as Reddit on camera without being Reddit.",
+            },
+        ],
+        outcome: {
+            summary: "TODO: what happened on set.",
+        },
+    },
 ];
 
 // Placeholder so the template can be previewed at /work/example during `npm run dev`.
