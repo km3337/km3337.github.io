@@ -45,7 +45,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         year: "TODO",
         tags: ["engineering"],
         summary: "A lightweight, modular way for organizers to launch Eventbrite ads from anywhere in the organizer workspace.",
-        result: "TODO: one-line result",
+        result: "+19% event-to-ad conversion",
         role: "Senior Software Engineer, Ads Experience",
         collaborators: [],
         challenge: "Organizers had a hard time getting from core event management to the ad creation platform. Engineering was on a holiday time crunch and needed a solution that was quick, stable, and worked with both the legacy organizer pages and the new rebrand.",
@@ -64,7 +64,11 @@ export const CASE_STUDIES: CaseStudy[] = [
             },
         ],
         outcome: {
-            summary: "TODO: what happened after launch.",
+            summary: "Shipped before the holidays. Conversion from event creation to ad creation went up 19%.",
+            metrics: [
+                { value: "+19%", label: "conversion from event creation to ad creation" },
+                { value: "On time", label: "shipped before the holiday rush" },
+            ],
         },
     },
 ];
