@@ -174,5 +174,9 @@ export const getCaseStudies = (): CaseStudy[] =>
         ? [...CASE_STUDIES, EXAMPLE_CASE_STUDY]
         : CASE_STUDIES.filter((study) => !study.draft);
 
+// What the home page lists: drafts show during `npm run dev`, the example never does.
+export const getListedCaseStudies = (): CaseStudy[] =>
+    process.env.NODE_ENV === "development" ? CASE_STUDIES : CASE_STUDIES.filter((study) => !study.draft);
+
 export const getCaseStudy = (slug: string): CaseStudy | undefined =>
     getCaseStudies().find((study) => study.slug === slug);

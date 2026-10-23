@@ -3,6 +3,8 @@ import { useState, useCallback } from "react";
 import { HorizontalScrollCarousel } from "./components/HorizontalScrollCarousel";
 import { HeroGrid } from "./components/HeroGrid";
 import { XpCardModal } from "./components/XpCardModal";
+import { CaseStudyCard } from "./components/CaseStudyCard";
+import { getListedCaseStudies } from "./work/caseStudies";
 import { motion } from 'motion/react'
 import styles from "./page.module.scss";
 import { CREATIVE_DIRECTION_CARDS, ILLUSTRATION_CARDS, ANIMATION_CARDS, PRODUCT_CARDS } from "./components/XpCard/constants";
@@ -53,6 +55,7 @@ export default function Home() {
   const closeModal = useCallback(() => {
     setSelectedModal(null);
   }, []);
+  const caseStudies = getListedCaseStudies();
 
   return (
     <main className="w-full flex flex-col">
@@ -61,20 +64,37 @@ export default function Home() {
         <HeroGrid />
       </section>
 
-      {/* Gallery Section */}
-      <section id="work" className="min-h-screen py-20 px-4 md:px-8">
-        <h2 className={`${styles.heading} mb-12 text-center`}>
-          GALLERY
-        </h2>
-        <motion.div className=" flex flex-col mt-8 mb-16 gap-16">
+      {/* The hero arrow links to #work, which lands on whichever section comes first */}
+      <div id="work">
+        {/* Case Studies Section (hidden until at least one is published) */}
+        {caseStudies.length > 0 && (
+          <section id="case-studies" className="py-20 px-4 md:px-8">
+            <h2 className={`${styles.heading} mb-12 text-center`}>
+              CASE STUDIES
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              {caseStudies.map((study) => (
+                <CaseStudyCard key={study.slug} study={study} />
+              ))}
+            </div>
+          </section>
+        )}
 
-          <CreativeDirectionCarousel onCardSelect={openModal} />
-          <ProductCarousel onCardSelect={openModal} />
-          <AnimationCarousel onCardSelect={openModal} />
-          <IllustrationCarousel onCardSelect={openModal} />
+        {/* Gallery Section */}
+        <section id="gallery" className="min-h-screen py-20 px-4 md:px-8">
+          <h2 className={`${styles.heading} mb-12 text-center`}>
+            GALLERY
+          </h2>
+          <motion.div className=" flex flex-col mt-8 mb-16 gap-16">
 
-        </motion.div>
-      </section>
+            <CreativeDirectionCarousel onCardSelect={openModal} />
+            <ProductCarousel onCardSelect={openModal} />
+            <AnimationCarousel onCardSelect={openModal} />
+            <IllustrationCarousel onCardSelect={openModal} />
+
+          </motion.div>
+        </section>
+      </div>
       <XpCardModal card={selectedModal} onClose={closeModal} />
     </main>
   );
