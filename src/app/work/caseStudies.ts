@@ -81,7 +81,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         year: "2025",
         tags: ["engineering", "creative"],
         summary: "Legally distinct versions of Reddit, Google Search, Google Maps and an iPhone call, built as web apps to run live on set for the film The Children.",
-        result: "TODO: one-line result",
+        result: "Saved thousands in post-production VFX",
         role: "Lead Playback Animator",
         heroImage: {
             type: "video",
@@ -106,7 +106,11 @@ export const CASE_STUDIES: CaseStudy[] = [
             },
         ],
         outcome: {
-            summary: "TODO: what happened on set.",
+            summary: "The apps ran live on set on phones, old laptops and desktop computers, so the screens were captured in camera instead of added in post. That saved the production thousands of dollars in editing and post-production VFX.",
+            metrics: [
+                { value: "$1,000s", label: "saved in editing and post-production VFX" },
+                { value: "3", label: "device types: phones, laptops and desktops" },
+            ],
         },
         images: [
             {

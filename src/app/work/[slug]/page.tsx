@@ -115,10 +115,10 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                 <section className="flex flex-col gap-6">
                     <h2 className={`${homeStyles.subHeading} text-md md:text-lg`}>Results</h2>
                     {study.outcome.metrics && study.outcome.metrics.length > 0 && (
-                        <ul className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
                             {study.outcome.metrics.map((metric, index) => (
                                 <li key={index} className="flex flex-col">
-                                    <span className={`${homeStyles.subHeading} text-2xl md:text-3xl`}>{metric.value}</span>
+                                    <span className={`${homeStyles.subHeading} !normal-case !text-xl md:!text-3xl`}>{metric.value}</span>
                                     <span className="text-sm opacity-70">{metric.label}</span>
                                 </li>
                             ))}
