@@ -45,7 +45,7 @@ const Media = ({ media }: { media: CaseStudyImage }) => (
                 playsInline
             />
         ) : (
-            <img className="w-full h-auto" src={media.src} alt={media.alt} />
+            <img className="block w-auto max-w-full h-auto max-h-[80vh] mx-auto" src={media.src} alt={media.alt} />
         )}
         {media.caption && <figcaption className="mt-2 text-sm opacity-70">{media.caption}</figcaption>}
     </figure>

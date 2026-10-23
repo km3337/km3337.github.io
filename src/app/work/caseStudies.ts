@@ -7,6 +7,7 @@ export interface CaseStudyImage {
     type?: "image" | "video"; // videos autoplay muted on loop
     poster?: string; // still frame shown before a video loads
     wide?: boolean; // spans both columns in the image grid, for landscape media
+    contain?: boolean; // show the whole image on home page cards instead of cropping (logos)
 }
 
 export interface CaseStudyDecision {
@@ -51,6 +52,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         result: "+19% event-to-ad conversion",
         role: "Senior Software Engineer, Ads Creator Experience",
         collaborators: [],
+        heroImage: { src: "/work/instant-ads/key.png", alt: "Eventbrite brand mark", contain: true },
         challenge: "Organizers had a hard time getting from core event management to the ad creation platform. Engineering was on a holiday time crunch and needed a solution that was quick, stable, and worked with both the legacy organizer pages and the new rebrand.",
         decisions: [
             {

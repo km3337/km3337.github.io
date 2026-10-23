@@ -40,7 +40,7 @@ export const CaseStudyCard = ({ study }: { study: CaseStudy }) => {
                             <motion.img
                                 src={cover}
                                 alt={study.heroImage?.alt ?? study.title}
-                                className={styles.cover}
+                                className={`${styles.cover} ${study.heroImage?.contain ? styles.coverContain : ""}`}
                                 loading="lazy"
                                 whileHover={{ scale: 1.08 }}
                                 transition={{ duration: 0.4 }}

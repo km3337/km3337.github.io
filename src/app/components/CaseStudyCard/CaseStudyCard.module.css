@@ -27,6 +27,12 @@
     object-fit: cover;
 }
 
+.coverContain {
+    object-fit: contain;
+    padding: 1.5rem;
+    background: white;
+}
+
 .coverFallback {
     width: 100%;
     aspect-ratio: 4/3;
