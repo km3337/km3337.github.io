@@ -42,11 +42,11 @@ export const CASE_STUDIES: CaseStudy[] = [
         slug: "instant-ads",
         draft: true,
         title: "Instant Ads",
-        year: "TODO",
+        year: "2026",
         tags: ["engineering"],
         summary: "A lightweight, modular way for organizers to launch Eventbrite ads from anywhere in the organizer workspace.",
         result: "+19% event-to-ad conversion",
-        role: "Senior Software Engineer, Ads Experience",
+        role: "Senior Software Engineer, Ads Creator Experience",
         collaborators: [],
         challenge: "Organizers had a hard time getting from core event management to the ad creation platform. Engineering was on a holiday time crunch and needed a solution that was quick, stable, and worked with both the legacy organizer pages and the new rebrand.",
         decisions: [
