@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { Tile } from '../Tile'
 import DownArrowCubed from '../Icons/ArrowDownIcon.svg'
+import { TAGLINE_ROLE, TAGLINE_DETAIL } from '../../constants'
 
 export const HeroGrid = () => {
     return (
@@ -18,7 +19,15 @@ export const HeroGrid = () => {
                     src="/NULL_Inside white.png"
                     alt="NULL Inside"
                 />
-                <motion.div
+                {/* Font size shrinks on narrow phones so each half fits on one line */}
+                <p className="md:max-w-xl px-4 text-center text-white text-[min(10px,calc((100vw-2rem)/38))] md:text-sm leading-relaxed font-[family-name:var(--font-press-start)]">
+                    <span className="whitespace-nowrap">{TAGLINE_ROLE}</span>{' '}
+                    <span className="whitespace-nowrap">{TAGLINE_DETAIL}</span>
+                </p>
+                <motion.a
+                    href="#work"
+                    aria-label="Scroll to work"
+                    className="pointer-events-auto"
                     animate={{ y: [0, 8, 0] }}
                     transition={{
                         repeat: Infinity,
@@ -27,7 +36,7 @@ export const HeroGrid = () => {
                     }}
                 >
                     <DownArrowCubed width={45} height={45} fill="white" />
-                </motion.div>
+                </motion.a>
             </div>
         </>
     )

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import { NavigationBar } from "./components/NavigationBar";
+import { TAGLINE } from "./constants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,10 +14,10 @@ const pressStart2P = Press_Start_2P({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nullinside.net"),
   title: "NULL INSIDE - Kristian Mentor's portfolio",
-  description: "A creative compilation of my work.",
+  description: TAGLINE,
   openGraph: {
     title: "NULL INSIDE - Kristian Mentor's portfolio",
-    description: "A creative compilation of my work.",
+    description: TAGLINE,
     url: "https://nullinside.net",
     siteName: "NULL INSIDE",
     locale: "en_US",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NULL INSIDE - Kristian Mentor's portfolio",
-    description: "A creative compilation of my work.",
+    description: TAGLINE,
     images: ["/NULL_Inside white.png"],
   },
   icons: {

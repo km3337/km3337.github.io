@@ -1,0 +1,63 @@
+.cardContainer {
+    width: 100%;
+}
+
+.cardLink {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.windowCustom {
+    width: 100% !important;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.cardLink:hover .windowCustom,
+.cardLink:focus-visible .windowCustom {
+    transform: translateY(-4px);
+}
+
+.cover {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: block;
+    object-fit: cover;
+}
+
+.coverContain {
+    object-fit: contain;
+    padding: 1.5rem;
+    background: white;
+}
+
+.coverFallback {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgb(12, 12, 12);
+    color: white;
+    text-align: center;
+    font-family: var(--font-press-start, "Press Start 2P", monospace);
+    font-size: clamp(0.9rem, 3vw, 1.25rem);
+    line-height: 1.6;
+}
+
+.statusBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.summary {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
