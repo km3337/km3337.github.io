@@ -43,6 +43,35 @@ export interface CaseStudy {
 // Real case studies go here. Order is the order they show on the site.
 export const CASE_STUDIES: CaseStudy[] = [
     {
+        slug: "flatbush-tactics",
+        title: "Flatbush Tactics",
+        year: "2026",
+        tags: ["creative", "engineering"],
+        summary: "A pixel-art, portrait-mode shooter set on the Brooklyn subway, playable as a free demo right in the browser.",
+        result: "Playable browser demo",
+        role: "Creator: game design, pixel art and programming",
+        collaborators: [],
+        heroImage: { src: "/work/flatbush-tactics/ali_portrait.png", alt: "Ali, the first playable freelancer in Flatbush Tactics", contain: true },
+        challenge: "Build a cover shooter that feels good one-handed on a phone: every fight has to read at a glance on a 360x780 pixel screen, and the controls have to work with a thumb as well as a mouse.",
+        decisions: [
+            {
+                heading: "Pixel art at 1x, scaled whole",
+                body: "Every sprite, background and UI element is drawn in Aseprite at 1x for a 360x780 screen and scaled up on the pixel grid, so the art stays crisp from a phone to a desktop window.",
+            },
+            {
+                heading: "Tap, hold and flick",
+                body: "Tap to fire, hold to charge a shot that locks onto the enemy under the reticle, and flick to duck into cover and reload. Enemies telegraph their attacks with a wind-up, so cover timing is the core skill.",
+            },
+            {
+                heading: "A run across the subway map",
+                body: "Each run picks a line on a generated stage map of real Brooklyn stops, with fights, events and shops between you and the Last Stop.",
+            },
+        ],
+        outcome: {
+            summary: "The first playable demo runs in the browser on phones and desktops. Join the waitlist to hear when there's more to play.",
+        },
+    },
+    {
         slug: "instant-ads",
         draft: true,
         title: "Instant Ads",
