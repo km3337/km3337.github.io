@@ -3,6 +3,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import 'xp.css/dist/XP.css'
 import styles from './FlatbushTacticsDemo.module.css'
+// Same title bar and window frame as the portfolio cards (XP.css alone squishes the bar).
+import cardStyles from '../../components/XpCard/XpCard.module.css'
 
 // Flatbush Tactics demo window for the case study: a placeholder title
 // screen (the game's digital rain behind Ali), a PLAY DEMO button into the
@@ -163,8 +165,8 @@ export function FlatbushTacticsDemo() {
     }, [email])
 
     return (
-        <div className={`window ${styles.window}`}>
-            <div className="title-bar">
+        <div className={`window ${cardStyles.windowCustom} ${styles.window}`}>
+            <div className={`title-bar ${cardStyles.titleBarCustom}`}>
                 <div className="title-bar-text">FlatbushTactics.exe</div>
                 <div className="title-bar-controls">
                     <button type="button" aria-label="Minimize" />

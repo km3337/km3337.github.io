@@ -3,6 +3,8 @@ import Link from 'next/link';
 import "xp.css/dist/XP.css";
 import { motion } from "motion/react"
 import styles from './CaseStudyCard.module.css'
+// Same title bar as the portfolio cards (XP.css alone squishes the bar).
+import cardStyles from '../XpCard/XpCard.module.css'
 import type { CaseStudy } from '../../work/caseStudies';
 
 const cardVariants = {
@@ -29,7 +31,7 @@ export const CaseStudyCard = ({ study }: { study: CaseStudy }) => {
         >
             <Link href={`/work/${study.slug}`} className={styles.cardLink}>
                 <div className={`window ${styles.windowCustom}`}>
-                    <div className="title-bar">
+                    <div className={`title-bar ${cardStyles.titleBarCustom}`}>
                         <div className="title-bar-text truncate max-w-[80%]">{study.title}</div>
                         <div className="title-bar-controls">
                             <button aria-hidden tabIndex={-1} aria-label="Maximize" />
