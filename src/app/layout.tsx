@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
+import { Analytics } from "./components/Analytics/Analytics";
 import { NavigationBar } from "./components/NavigationBar";
 import { TAGLINE } from "./constants";
 import "./globals.css";
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${pressStart2P.variable}`}>
         <NavigationBar />
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 // `app/work/[slug]/page.tsx` is the long-form case study template for `/work/<slug>`
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { LiveCount } from "../../components/Analytics/LiveCount";
 import homeStyles from "../../page.module.scss";
 import { getCaseStudies, getCaseStudy, type CaseStudyImage } from "../caseStudies";
 import { DEMOS } from "../demos";
@@ -118,7 +119,13 @@ export default async function CaseStudyPage({ params }: { params: Params }) {
                         <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6">
                             {study.outcome.metrics.map((metric, index) => (
                                 <li key={index} className="flex flex-col">
-                                    <span className={`${homeStyles.subHeading} !normal-case !text-xl md:!text-3xl`}>{metric.value}</span>
+                                    <span className={`${homeStyles.subHeading} !normal-case !text-xl md:!text-3xl`}>
+                                        {metric.goatcounterPath ? (
+                                            <LiveCount path={metric.goatcounterPath} fallback={metric.value} />
+                                        ) : (
+                                            metric.value
+                                        )}
+                                    </span>
                                     <span className="text-sm opacity-70">{metric.label}</span>
                                 </li>
                             ))}

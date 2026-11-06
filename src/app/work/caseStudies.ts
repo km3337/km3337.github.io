@@ -16,8 +16,9 @@ export interface CaseStudyDecision {
 }
 
 export interface CaseStudyMetric {
-    value: string; // e.g. "48 hrs"
+    value: string; // e.g. "48 hrs"; with goatcounterPath, shown until the live count loads
     label: string; // e.g. "to sell out"
+    goatcounterPath?: string; // live total for this GoatCounter path, e.g. "/flatbushTactics"
 }
 
 export interface CaseStudy {
@@ -69,6 +70,10 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
         outcome: {
             summary: "The first playable demo runs in the browser on phones and desktops. Join the waitlist to hear when there's more to play.",
+            metrics: [
+                // The game page counts itself under this path (Godot export preset head_include).
+                { value: "—", label: "plays of the browser demo", goatcounterPath: "/flatbushTactics" },
+            ],
         },
     },
     {
